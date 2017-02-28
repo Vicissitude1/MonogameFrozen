@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Frozen
 {
-    interface Ibuilder
+    interface IBuilder
     {
     }
 }

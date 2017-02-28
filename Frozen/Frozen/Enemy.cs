@@ -8,5 +8,6 @@ namespace Frozen
 {
     class Enemy
     {
+
     }
 }
