@@ -8,7 +8,26 @@ namespace Frozen
 {
     class GameObject
     {
+        public Transform transform { get; private set; }
+        private List<Component> component;
+        private SpriteRenderer spriterenderer;
 
+        public GameObject()
+        {
+
+        }
+
+        public void AddComponent(Component component)
+        {
+                 
+        }
+
+        public void GetComponent( string Component)
+        {
+
+        }
+
+        
 
     }
 }
