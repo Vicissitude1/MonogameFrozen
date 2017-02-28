@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
-    interface Ibuilder
+    interface IBuilder
     {
 
         GameObject GetResult();
