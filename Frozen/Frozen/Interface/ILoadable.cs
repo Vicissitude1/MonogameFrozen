@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Frozen
 {
-    class Animation
+    interface ILoadable
     {
-        private 
     }
 }
