@@ -8,5 +8,7 @@ namespace Frozen
 {
     interface IUpdateable
     {
+        void Update();
     }
 }
+
