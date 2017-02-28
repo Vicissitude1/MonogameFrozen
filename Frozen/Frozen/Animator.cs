@@ -13,6 +13,7 @@ namespace Frozen
 {
     class Animator
     {  
+        //fields 
         private SpriteRenderer spriteRenderer;
         private int currentIndex;
         private float timeElapsed;
@@ -20,6 +21,29 @@ namespace Frozen
         private Rectangle[] rectangles;
         private string animationName;
 
-        public Dictionary<string, Animation> Animations;
+        public Dictionary<string, Animation> animations;
+
+        public Dictionary<string, Animation> Animations { get { return animations; } set { animations = value; } }
+
+        //constructor
+        public Animator()
+        {
+
+        }
+
+        public void Update()
+        {
+
+        }
+
+        public void CreateAnimation()
+        {
+
+        }
+
+        public void PlayAnimation()
+        {
+
+        }
     }
 }
