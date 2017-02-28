@@ -40,7 +40,16 @@
   <ItemGroup>
     <Compile Include="Animation.cs" />
     <Compile Include="Animator.cs" />
+    <Compile Include="Builder\Director.cs" />
+    <Compile Include="Builder\EnemyBuilder.cs" />
     <Compile Include="GameWorld.cs" />
+    <Compile Include="Builder\Ibuilder.cs" />
+    <Compile Include="Builder\PlayerBuilder.cs" />
+    <Compile Include="Interface\IAnimateable.cs" />
+    <Compile Include="Interface\IDrawable.cs" />
+    <Compile Include="Interface\ILoadable.cs" />
+    <Compile Include="Interface\IStrategy.cs" />
+    <Compile Include="Interface\IUpdateable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
