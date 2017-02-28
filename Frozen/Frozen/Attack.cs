@@ -8,5 +8,15 @@ namespace Frozen
 {
     class Attack
     {
+        private Animator animator;
+
+        public Attack()
+        {
+
+        }
+        public void Execute()
+        {
+
+        }
     }
 }
