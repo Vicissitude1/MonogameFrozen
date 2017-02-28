@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Frozen
 {
+    enum DIRECTION { Front, Back, Left, Right };
     interface IStrategy
+
     {
+        void Execute(ref DIRECTION currentDirection);
     }
 }
