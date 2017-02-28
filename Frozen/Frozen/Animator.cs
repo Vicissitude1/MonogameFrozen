@@ -21,9 +21,9 @@ namespace Frozen
         private Rectangle[] rectangles;
         private string animationName;
 
-        public Dictionary<string, Animation> animations;
+        
 
-        public Dictionary<string, Animation> Animations { get { return animations; } set { animations = value; } }
+        public Dictionary<string, Animation> Animations { get; private set; }
 
         //constructor
         public Animator()

@@ -13,12 +13,10 @@ namespace Frozen
 {
     class Animation
     {
-        private float fps;
-        private Vector2 offset;
+    
         private Rectangle[] rectangles;
-
-        public float Fps { get { return fps; } set { fps = value; } }
-        public Vector2 Offset { get { return offset; } set { offset = value; } }
+        public float Fps { get; private set; }
+        public Vector2 Offset { get; private set; }
 
         public Animation()
         {
