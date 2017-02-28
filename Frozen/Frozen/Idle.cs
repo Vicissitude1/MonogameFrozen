@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace Frozen
 {
-    class Idle
+    class Idle : IStrategy
     {
+        public Animator animator{ get; set; }
+
+        public Idle (Animator animator)
+        {
+            this.animator = animator;
+        }
+        public void Execute(ref DIRECTION currentDirection)
+        {
+
+        }
+
     }
 }
