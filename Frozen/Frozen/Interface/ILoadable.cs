@@ -8,5 +8,9 @@ namespace Frozen
 {
     interface ILoadable
     {
+
+        void LoadContent(ContentManager content);
+
     }
+
 }
