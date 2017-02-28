@@ -40,9 +40,23 @@
   <ItemGroup>
     <Compile Include="Animation.cs" />
     <Compile Include="Animator.cs" />
+    <Compile Include="Attack.cs" />
+    <Compile Include="Collide.cs" />
+    <Compile Include="Component.cs" />
+    <Compile Include="Die.cs" />
+    <Compile Include="Enemy.cs" />
+    <Compile Include="GameObject.cs" />
+    <Compile Include="GameScreen.cs" />
     <Compile Include="GameWorld.cs" />
+    <Compile Include="Idle.cs" />
+    <Compile Include="PickUpable.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SFX.cs" />
+    <Compile Include="SpriteRenderer.cs" />
+    <Compile Include="Transform.cs" />
+    <Compile Include="Walk.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
