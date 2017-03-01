@@ -14,7 +14,7 @@ namespace Frozen
         
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        public float deltatime;
+        public float deltaTime { get; private set; }
         private List<GameObject> go = new List<GameObject>();
         private static GameWorld instance;
 
