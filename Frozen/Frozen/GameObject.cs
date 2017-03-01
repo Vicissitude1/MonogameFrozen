@@ -27,7 +27,31 @@ namespace Frozen
 
         }
 
-        
+        public void LoadContant(ContentManager content)
+        {
+            foreach (Component component in components)
+            {
+                if (component is ILoadable)
+                {
+                    (component as ILoadable).LoadContent(content);
+                }
+            }
+        }
+
+        public void Update()
+        {
+            
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+
+        }
+
+        public void OnAnimationDone(string animationName)
+        {
+
+        }
 
     }
 }
