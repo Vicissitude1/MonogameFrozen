@@ -13,7 +13,7 @@ namespace Frozen
     class SpriteRenderer : Component, IDrawable, ILoadable
     
     {
-        public Rectangle rectangle { get; private set; }
+        public Rectangle rectangle { get; set; }
         public Texture2D sprite { get; private set; }
         private string spriteName;
         private float layerDepth;
