@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace Frozen
 {
@@ -13,6 +14,8 @@ namespace Frozen
         public GameWorld Instance { get; private set; }
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        public float deltatime;
+        private List<GameObject> go = new List<GameObject>();
 
         public GameWorld()
         {
@@ -28,6 +31,12 @@ namespace Frozen
         /// </summary>
         protected override void Initialize()
         {
+
+            Director director = new Director(new PlayerBuilder());
+            go.Add(director.Construct(Vector2.Zero));
+
+            director = new Director(new EnemyBuilder());
+            go.Add(director.Construct(Vector2.Zero));
             // TODO: Add your initialization logic here
 
             base.Initialize();
@@ -41,6 +50,12 @@ namespace Frozen
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            foreach (GameObject go in go)
+            {
+                go.LoadContent(this.Content);
+
+            }
 
             // TODO: use this.Content to load your game content here
         }
@@ -64,7 +79,10 @@ namespace Frozen
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            for (int i = 0; i < go.Count; i++)
+                go[i].Update();
+
+            deltatime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             base.Update(gameTime);
         }
@@ -77,7 +95,14 @@ namespace Frozen
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+            foreach (GameObject go in go)
+            {
+                go.Draw(spriteBatch);
+
+            }
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

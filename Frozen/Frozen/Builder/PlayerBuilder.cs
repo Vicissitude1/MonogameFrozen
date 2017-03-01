@@ -10,18 +10,23 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
-    class PlayerBuilder
+    class PlayerBuilder : IBuilder
     {
         public GameObject gameObject { get; set; }
 
         public void BuildGameObject(Vector2 position)
         {
+            gameObject = new GameObject();
 
+            gameObject.AddComponent(new Transform(new Vector2(0, 0), gameObject));
+            gameObject.AddComponent(new SpriteRenderer(gameObject, "HeroSheet", 150));
+            gameObject.AddComponent(new Player(gameObject, 200f));
+            gameObject.AddComponent(new Animator(gameObject));
         }
         // den skal retrun GameObject, men lige pt returner den null for ikke at få fejl
         public GameObject GetResult()
         {
-            return null;
+            return gameObject;
         }
     }
 }
