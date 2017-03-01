@@ -95,7 +95,7 @@ namespace Frozen
             for (int i = 0; i < go.Count; i++)
                 go[i].Update();
 
-            deltatime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             base.Update(gameTime);
         }
