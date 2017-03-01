@@ -27,10 +27,7 @@ namespace Frozen
             components.Add(component);
         }
 
-        public void GetComponent( string component)
-        {
-            return components.Find(n => n.GetType().Name == component);
-        }
+       
 
         public void LoadContant(ContentManager content)
         {
@@ -69,6 +66,10 @@ namespace Frozen
                     (component as IAnimateable).OnAnimationDone(animationName);
                 }
             }
+        }
+        public Component GetComponent(string component)
+        {
+            return components.Find(n => n.GetType().Name == component);
         }
 
     }
