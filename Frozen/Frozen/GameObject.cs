@@ -18,17 +18,18 @@ namespace Frozen
 
         public GameObject()
         {
-
+            components = new List<Component>();
+            AddComponent(transform);
         }
 
         public void AddComponent(Component component)
         {
-                 
+            components.Add(component);
         }
 
-        public void GetComponent( string Component)
+        public void GetComponent( string component)
         {
-
+            return components.Find(n => n.GetType().Name == component);
         }
 
         public void LoadContant(ContentManager content)
@@ -44,12 +45,19 @@ namespace Frozen
 
         public void Update()
         {
-            
+            foreach (IUpdateable iu in components.FindAll(c => c is IUpdateable))
+                iu.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
+            foreach (Component component in components)
+            {
+                if (component is IDrawable)
+                {
+                    (component as IDrawable).Draw(spriteBatch);
+                }
+            }
         }
 
         public void OnAnimationDone(string animationName)

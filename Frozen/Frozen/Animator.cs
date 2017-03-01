@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
-    class Animator
+    class Animator : Component, IUpdateable
     {  
         //fields 
         private SpriteRenderer spriteRenderer;
