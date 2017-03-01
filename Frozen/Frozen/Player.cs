@@ -17,6 +17,8 @@ namespace Frozen
         public bool canMove;
         private IStrategy strategy;
         private DIRECTION direction;
+        bool jump;
+        float acc;
 
 
         public Player(GameObject go, float speed) :base(go)
