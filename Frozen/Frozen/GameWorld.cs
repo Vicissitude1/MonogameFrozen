@@ -16,9 +16,9 @@ namespace Frozen
         SpriteBatch spriteBatch;
         public float deltatime;
         private List<GameObject> go = new List<GameObject>();
-        private GameWorld instance;
+        private static GameWorld instance;
 
-        public GameWorld Instance
+        public static GameWorld Instance
         {
             get
             {
