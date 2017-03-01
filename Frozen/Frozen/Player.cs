@@ -8,5 +8,9 @@ namespace Frozen
 {
     class Player
     {
+        private float speed;
+        public Animator animator;
+        private IStrategy strategy;
+        private DIRECTION direction;
     }
 }

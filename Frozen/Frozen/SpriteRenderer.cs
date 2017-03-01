@@ -27,7 +27,7 @@ namespace Frozen
 
         }
 
-        public void Draw()
+        public void Draw(SpriteBatch spriteBatch)
         {
             
         }
