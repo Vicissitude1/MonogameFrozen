@@ -44,6 +44,7 @@ namespace Frozen
         /// </summary>
         protected override void Initialize()
         {
+            
 
             Director director = new Director(new PlayerBuilder());
             go.Add(director.Construct(Vector2.Zero));
