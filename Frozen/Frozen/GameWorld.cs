@@ -11,11 +11,24 @@ namespace Frozen
     public class GameWorld : Game
     {
 
-        public GameWorld Instance { get; private set; }
+        
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public float deltatime;
         private List<GameObject> go = new List<GameObject>();
+        private GameWorld instance;
+
+        public GameWorld Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new GameWorld();
+                }
+                return instance;
+            }
+        }
 
         public GameWorld()
         {

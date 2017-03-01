@@ -10,15 +10,15 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
-    class GameObject
+    class GameObject : Component
     {
         public Transform transform { get; private set; }
-        private List<Component> components;
+        private List<Component> components = new List<Component>();
         private SpriteRenderer spriterenderer;
 
         public GameObject()
         {
-            components = new List<Component>();
+            
             AddComponent(transform);
         }
 
@@ -29,7 +29,7 @@ namespace Frozen
 
        
 
-        public void LoadContant(ContentManager content)
+        public void LoadContent(ContentManager content)
         {
             foreach (Component component in components)
             {
