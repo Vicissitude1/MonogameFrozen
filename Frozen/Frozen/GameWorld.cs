@@ -9,6 +9,8 @@ namespace Frozen
     /// </summary>
     public class GameWorld : Game
     {
+
+        public GameWorld Instance { get; private set; }
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 

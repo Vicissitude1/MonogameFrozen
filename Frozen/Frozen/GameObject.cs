@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
     class GameObject
     {
         public Transform transform { get; private set; }
-        private List<Component> component;
+        private List<Component> components;
         private SpriteRenderer spriterenderer;
 
         public GameObject()
@@ -50,7 +54,13 @@ namespace Frozen
 
         public void OnAnimationDone(string animationName)
         {
-
+            foreach (Component component in components)
+            {
+                if (component is IAnimateable)
+                {
+                    (component as IAnimateable).OnAnimationDone(animationName);
+                }
+            }
         }
 
     }
