@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
-    class Transform
+    class Transform : Component
     {
         public Vector2 Position { get; private set; }
 
@@ -21,7 +21,8 @@ namespace Frozen
 
         public void Translate(Vector2 translation)
         {
-
+            Position += translation;
+                 
         }
     }
 
