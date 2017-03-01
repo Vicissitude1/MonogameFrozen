@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Frozen
 {
-    class Player
+    class Player : Component, IUpdateable, ILoadable, IAnimateable
     {
         public float Speed { get; private set; }
         public Animator animator;
         public bool canMove;
         private IStrategy strategy;
-        private DIRECTION direction;
+        public DIRECTION direction { get; private set; }
 
 
         public Player()
@@ -43,6 +43,11 @@ namespace Frozen
         }
 
         public void Move()
+        {
+
+        }
+
+        public void LoadContent(ContentManager Content)
         {
 
         }
