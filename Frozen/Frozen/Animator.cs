@@ -46,9 +46,9 @@ namespace Frozen
             spriteRenderer.rectangle = rectangles[currentIndex];
         }
 
-        public void CreateAnimation()
+        public void CreateAnimation(Animation animation, string name)
         {
-
+            Animations.Add(name, animation);
         }
 
         public void PlayAnimation(string animationName)
