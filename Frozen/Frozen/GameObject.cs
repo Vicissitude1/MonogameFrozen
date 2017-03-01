@@ -29,7 +29,7 @@ namespace Frozen
 
        
 
-        public void LoadContant(ContentManager content)
+        public void LoadContent(ContentManager content)
         {
             foreach (Component component in components)
             {
