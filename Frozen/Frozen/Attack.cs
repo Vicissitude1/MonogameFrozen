@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Frozen
 {
-    class Attack
+    class Attack : IStrategy
     {
         private Animator animator;
 
@@ -14,7 +14,7 @@ namespace Frozen
         {
 
         }
-        public void Execute()
+        public void Execute(ref DIRECTION direction)
         {
 
         }

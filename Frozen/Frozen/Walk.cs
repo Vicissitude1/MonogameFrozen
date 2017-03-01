@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
-    class Walk
+    class Walk : IStrategy
     {
         private GameObject gameObject;
         private Animator animator;
