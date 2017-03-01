@@ -16,7 +16,7 @@ namespace Frozen
         public Animator animator;
         public bool canMove;
         private IStrategy strategy;
-        public DIRECTION direction { get; private set; }
+        private DIRECTION direction;
 
 
         public Player(GameObject go, float speed) :base(go)
@@ -44,8 +44,17 @@ namespace Frozen
                     }
                 }
 
-
+                else
+                {
+                    strategy = new Idle(animator);
+                }
+                if (keyState.IsKeyDown(Keys.Space))
+                {
+                    strategy = new Attack(animator);
+                    canMove = false;
+                }
             }
+            strategy.Execute(ref direction);
         }
 
         public void CreateAnimation()
@@ -54,9 +63,12 @@ namespace Frozen
             //animator.PlayAnimation("IdleFront");
         }
 
-        public void OnAnimationDone()
+        public void OnAnimationDone(string animationName)
         {
-
+            if (animationName.Contains("Attack"))
+            {
+                canMove = true;
+            }
         }
 
         public void Move()
@@ -66,7 +78,8 @@ namespace Frozen
 
         public void LoadContent(ContentManager Content)
         {
-
+            animator = (Animator)GameObject.GetComponent("Animator");
+            CreateAnimation();
         }
     }
 }

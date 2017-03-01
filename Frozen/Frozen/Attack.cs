@@ -10,13 +10,13 @@ namespace Frozen
     {
         private Animator animator;
 
-        public Attack()
+        public Attack(Animator animator)
         {
-
+            this.animator = animator;
         }
-        public void Execute(ref DIRECTION direction)
+        public void Execute(ref DIRECTION CurrentDirection)
         {
-
+            animator.PlayAnimation("Attack" + CurrentDirection);
         }
     }
 }

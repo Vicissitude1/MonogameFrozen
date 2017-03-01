@@ -35,7 +35,15 @@ namespace Frozen
 
         public void Update()
         {
-
+            timeElapsed += GameWorld.Instance.deltatime;
+            currentIndex = (int)(timeElapsed * fps);
+            if (currentIndex > rectangles.Length - 1)
+            {
+                GameObject.OnAnimationDone(animationName);
+                timeElapsed = 0;
+                currentIndex = 0;
+            }
+            spriteRenderer.rectangle = rectangles[currentIndex];
         }
 
         public void CreateAnimation()
@@ -43,9 +51,24 @@ namespace Frozen
 
         }
 
-        public void PlayAnimation()
+        public void PlayAnimation(string animationName)
         {
+            if (this.animationName != animationName)
+            {
+                //checks if it's a new animation
+                this.rectangles = Animations[animationName].Rectangles;
+                //sets the rectangle
+                this.spriteRenderer.Rectangle = rectangles[0];
+                //sets the offset
+                this.spriteRenderer.Offset = Animations[animationName].Offset;
+                //sets the animation name
+                this.animationName = animationName;
+                //sets the fps
+                this.fps = Animations[animationName].Fps;
+                //resets the animation 
 
-        }
+                timeElapsed = 0;
+                currentIndex = 0;
+            }
     }
 }
