@@ -18,7 +18,7 @@ namespace Frozen
 
         public GameObject()
         {
-            
+            this.transform = new Transform(this, Vector2.Zero);
             AddComponent(transform);
         }
 
