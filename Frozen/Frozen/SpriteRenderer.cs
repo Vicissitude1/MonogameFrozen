@@ -29,7 +29,7 @@ namespace Frozen
 
         public void Draw()
         {
-
+            
         }
     }
 }
