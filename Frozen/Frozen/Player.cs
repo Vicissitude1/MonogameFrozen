@@ -19,9 +19,10 @@ namespace Frozen
         public DIRECTION direction { get; private set; }
 
 
-        public Player()
+        public Player(GameObject go, float speed) :base(go)
         {
-
+            this.Speed = speed;
+            canMove = true;
         }
         
         public void Execute(ref DIRECTION CurrendtDirecion)
@@ -32,7 +33,19 @@ namespace Frozen
 
         public void Update()
         {
+            KeyboardState keyState = Keyboard.GetState();
+            if (canMove)
+            {
+                if(keyState.IsKeyDown(Keys.W) || keyState.IsKeyDown(Keys.A) || keyState.IsKeyDown(Keys.S) || keyState.IsKeyDown(Keys.D))
+                {
+                    if(!(strategy is Walk))
+                    {
+                        strategy = new Walk(GameObject.transform, GameObject, animator);
+                    }
+                }
 
+
+            }
         }
 
         public void CreateAnimation()
