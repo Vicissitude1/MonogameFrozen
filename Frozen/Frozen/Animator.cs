@@ -29,7 +29,8 @@ namespace Frozen
         public Animator(GameObject gameObject) : base(gameObject)
         {
             fps = 5;
-            this.spriteRenderer = (SpriteRenderer)gameObject.GetComponent("SpriteRenderer")
+            this.spriteRenderer = (SpriteRenderer)gameObject.GetComponent("SpriteRenderer");
+            Animations = new Dictionary<string, Animation>();
         }
 
         public void Update()

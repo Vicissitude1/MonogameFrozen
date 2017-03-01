@@ -21,7 +21,8 @@ namespace Frozen
 
         public SpriteRenderer(GameObject gameObject, string spriteName, float layerDepth)
         {
-
+            this.spriteName = spriteName;
+            this.layerDepth = layerDepth;
         }
        
        public void LoadContent(ContentManager content)
