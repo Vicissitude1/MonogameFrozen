@@ -26,9 +26,10 @@ namespace Frozen
         public Dictionary<string, Animation> Animations { get; private set; }
 
         //constructor
-        public Animator()
+        public Animator(GameObject gameObject) : base(gameObject)
         {
-
+            fps = 5;
+            this.spriteRenderer = (SpriteRenderer)gameObject.GetComponent("SpriteRenderer")
         }
 
         public void Update()

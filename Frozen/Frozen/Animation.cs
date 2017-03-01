@@ -14,13 +14,19 @@ namespace Frozen
     class Animation
     {
     
-        private Rectangle[] rectangles;
+        public Rectangle[] rectangles { get; set; }
         public float Fps { get; private set; }
         public Vector2 Offset { get; private set; }
 
-        public Animation()
+        public Animation(int frames, int yPos, int xStartFrame, int width, int height, float fps, Vector2 offset)
         {
-
+            this.rectangles = new Rectangle[frames];
+            this.Offset = offset;
+            this.Fps = fps;
+            for (int i = 0; i < frames; i++)
+            {
+                rectangles[i] = new Rectangle((i + xStartFrame) * width, yPos, width, height);
+            }
         }
 
 
