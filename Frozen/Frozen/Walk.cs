@@ -59,7 +59,7 @@ namespace Frozen
 
 
 
-            gameObject.Transform.Translate(translation * GameWorld.Instance.deltaTime * player.Speed);
+            gameObject.transform.Translate(translation * GameWorld.Instance.deltaTime * player.Speed);
             animator.PlayAnimation("Walk" + CurrentDirection);
         }
     }

@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Content;
 namespace Frozen
 {
     class Animator : Component, IUpdateable
-    {  
+    {
         //fields 
         private SpriteRenderer spriteRenderer;
         private int currentIndex;
@@ -21,7 +21,7 @@ namespace Frozen
         private Rectangle[] rectangles;
         private string animationName;
 
-        
+
 
         public Dictionary<string, Animation> Animations { get; private set; }
 
@@ -35,7 +35,7 @@ namespace Frozen
 
         public void Update()
         {
-            timeElapsed += GameWorld.Instance.deltatime;
+            timeElapsed += GameWorld.Instance.deltaTime;
             currentIndex = (int)(timeElapsed * fps);
             if (currentIndex > rectangles.Length - 1)
             {
@@ -56,11 +56,11 @@ namespace Frozen
             if (this.animationName != animationName)
             {
                 //checks if it's a new animation
-                this.rectangles = Animations[animationName].Rectangles;
+                this.rectangles = Animations[animationName].rectangles;
                 //sets the rectangle
-                this.spriteRenderer.Rectangle = rectangles[0];
+                this.spriteRenderer.rectangle = rectangles[0];
                 //sets the offset
-                this.spriteRenderer.Offset = Animations[animationName].Offset;
+                this.spriteRenderer.offset = Animations[animationName].Offset;
                 //sets the animation name
                 this.animationName = animationName;
                 //sets the fps
@@ -70,5 +70,6 @@ namespace Frozen
                 timeElapsed = 0;
                 currentIndex = 0;
             }
+        }
     }
 }
