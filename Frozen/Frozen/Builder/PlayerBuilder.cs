@@ -18,7 +18,7 @@ namespace Frozen
         {
             gameObject = new GameObject();
 
-            gameObject.AddComponent(new Transform(new Vector2(0, 0), gameObject));
+            gameObject.AddComponent(new Transform(gameObject, new Vector2(0,0)));
             gameObject.AddComponent(new SpriteRenderer(gameObject, "HeroSheet", 150));
             gameObject.AddComponent(new Player(gameObject, 200f));
             gameObject.AddComponent(new Animator(gameObject));
