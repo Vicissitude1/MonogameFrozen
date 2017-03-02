@@ -49,6 +49,7 @@ namespace Frozen
         /// </summary>
         protected override void Initialize()
         {
+            
 
             gos = new List<GameObject>();
 
