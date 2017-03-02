@@ -12,7 +12,7 @@ namespace Frozen
 {
           abstract class Component
     {
-        public GameObject GameObject { get; private set; }
+        public GameObject GameObject { get; set; }
 
         public Component(GameObject go)
         {

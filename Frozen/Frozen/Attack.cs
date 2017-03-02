@@ -8,7 +8,7 @@ namespace Frozen
 {
     class Attack : IStrategy
     {
-        private Animator animator;
+        public Animator animator { get; set; }
 
         public Attack(Animator animator)
         {

@@ -23,7 +23,7 @@ namespace Frozen
 
 
 
-        public Dictionary<string, Animation> Animations { get; private set; }
+        public Dictionary<string, Animation> Animations { get; set; }
 
         //constructor
         public Animator(GameObject gameObject) : base(gameObject)
@@ -37,6 +37,7 @@ namespace Frozen
         {
             timeElapsed += GameWorld.Instance.deltaTime;
             currentIndex = (int)(timeElapsed * fps);
+
             if (currentIndex > rectangles.Length - 1)
             {
                 GameObject.OnAnimationDone(animationName);

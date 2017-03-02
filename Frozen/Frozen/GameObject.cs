@@ -13,11 +13,41 @@ namespace Frozen
     class GameObject : Component
     {
         public Transform transform { get; private set; }
-        private List<Component> components = new List<Component>();
-        private SpriteRenderer spriterenderer;
+
+        private Player player;
+        private List<Component> components;
+        private SpriteRenderer spriteRenderer;
+
+        public SpriteRenderer Spriterenderer
+        {
+            get
+            {
+                return spriteRenderer;
+            }
+
+            set
+            {
+                spriteRenderer = value;
+            }
+        }
+
+        public Player Player
+        {
+            get
+            {
+                return player;
+            }
+
+            set
+            {
+                player = value;
+            }
+        }
 
         public GameObject()
         {
+
+            components = new List<Component>();
             this.transform = new Transform(this, Vector2.Zero);
             AddComponent(transform);
         }

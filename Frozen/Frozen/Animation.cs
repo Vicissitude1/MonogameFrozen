@@ -20,8 +20,8 @@ namespace Frozen
 
         public Animation(int frames, int yPos, int xStartFrame, int width, int height, float fps, Vector2 offset)
         {
-            this.rectangles = new Rectangle[frames];
-            this.Offset = offset;
+            rectangles = new Rectangle[frames];
+            Offset = offset;
             this.Fps = fps;
             for (int i = 0; i < frames; i++)
             {

@@ -73,10 +73,7 @@ namespace Frozen
             }
         }
 
-        public void Move()
-        {
-
-        }
+  
 
         public void LoadContent(ContentManager Content)
         {
