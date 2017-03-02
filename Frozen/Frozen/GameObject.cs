@@ -50,6 +50,8 @@ namespace Frozen
             components = new List<Component>();
             this.transform = new Transform(this, Vector2.Zero);
             AddComponent(transform);
+
+
         }
 
         public void AddComponent(Component component)

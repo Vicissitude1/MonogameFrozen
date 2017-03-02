@@ -17,10 +17,10 @@ namespace Frozen
     {
 
         
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
         public float deltaTime { get; private set; }
-        private List<GameObject> go = new List<GameObject>();
+        private List<GameObject> gos = new List<GameObject>();
         private static GameWorld instance;
 
         public static GameWorld Instance
@@ -49,12 +49,17 @@ namespace Frozen
         /// </summary>
         protected override void Initialize()
         {
+            
+
+            gos = new List<GameObject>();
 
             Director director = new Director(new PlayerBuilder());
-            go.Add(director.Construct(Vector2.Zero));
+            gos.Add(director.Construct(Vector2.Zero));
+            //go.Add(director.Construct(new Player(, 50));
 
-            director = new Director(new EnemyBuilder());
-            go.Add(director.Construct(Vector2.Zero));
+           // player = director.Construct(new Player()) 
+            //director = new Director(new EnemyBuilder());
+            //gos.Add(director.Construct(Vector2.Zero));
             // TODO: Add your initialization logic here
 
             base.Initialize();
@@ -69,7 +74,7 @@ namespace Frozen
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            foreach (GameObject go in go)
+            foreach (GameObject go in gos)
             {
                 go.LoadContent(this.Content);
 
@@ -97,8 +102,8 @@ namespace Frozen
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            for (int i = 0; i < go.Count; i++)
-                go[i].Update();
+            for (int i = 0; i < gos.Count; i++)
+                gos[i].Update();
 
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -114,7 +119,7 @@ namespace Frozen
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-            foreach (GameObject go in go)
+            foreach (GameObject go in gos)
             {
                 go.Draw(spriteBatch);
 

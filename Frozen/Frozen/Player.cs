@@ -61,8 +61,9 @@ namespace Frozen
 
         public void CreateAnimation()
         {
+            animator.CreateAnimation(new Animation(4, 0, 0, 90, 150, 6, Vector2.Zero), "IdleFront");
             //animator.CreateAnimation(new Animation(4, 0, 0, 90, 150, 6, Vector2.Zero), "IdleFront");
-            //animator.PlayAnimation("IdleFront");
+            animator.PlayAnimation("IdleFront");
         }
 
         public void OnAnimationDone(string animationName)
