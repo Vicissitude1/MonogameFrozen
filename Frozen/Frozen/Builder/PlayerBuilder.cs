@@ -23,7 +23,7 @@ namespace Frozen
             gameObject.AddComponent(new Player(gameObject, 200f));
             gameObject.AddComponent(new Animator(gameObject));
         }
-        // den skal retrun GameObject, men lige pt returner den null for ikke at få fejl
+        
         public GameObject GetResult()
         {
             return gameObject;
