@@ -15,8 +15,8 @@ namespace Frozen
     {
     
         public Rectangle[] rectangles { get; set; }
-        public float Fps { get; private set; }
-        public Vector2 Offset { get; private set; }
+        public float Fps { get; set; }
+        public Vector2 Offset { get; set; }
 
         public Animation(int frames, int yPos, int xStartFrame, int width, int height, float fps, Vector2 offset)
         {

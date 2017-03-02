@@ -14,7 +14,7 @@ namespace Frozen
     {
         public Transform transform { get; private set; }
         private List<Component> components = new List<Component>();
-        private SpriteRenderer spriteRenderer;
+       
 
         public GameObject()
         {
