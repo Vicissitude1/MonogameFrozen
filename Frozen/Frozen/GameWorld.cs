@@ -17,6 +17,7 @@ namespace Frozen
     {
 
         
+
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         public float deltaTime { get; private set; }
@@ -55,12 +56,18 @@ namespace Frozen
 
             Director director = new Director(new PlayerBuilder());
             gos.Add(director.Construct(Vector2.Zero));
+
+            Camera.Instance.Zoom = 2.0f;
+             
+
             //go.Add(director.Construct(new Player(, 50));
 
            // player = director.Construct(new Player()) 
             //director = new Director(new EnemyBuilder());
             //gos.Add(director.Construct(Vector2.Zero));
             // TODO: Add your initialization logic here
+
+            
 
             base.Initialize();
         }
@@ -107,6 +114,11 @@ namespace Frozen
 
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
+
+            Camera.Instance.Rotation += 0.01f;
+
+            Camera.Instance.Pos = gos[0].transform.Position;
+
             base.Update(gameTime);
         }
 
@@ -117,11 +129,11 @@ namespace Frozen
         protected override void Draw(GameTime gameTime)
         {
 
-            Camera2d cam = new Camera2d();
-            cam.Pos = new Vector2(500.0f,200.0f);
+           
+
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null,null,null,null,Camera.Instance.get_transformation(GraphicsDevice));
             foreach (GameObject go in gos)
             {
                 go.Draw(spriteBatch);
