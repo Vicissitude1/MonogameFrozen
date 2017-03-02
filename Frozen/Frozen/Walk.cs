@@ -54,6 +54,7 @@ namespace Frozen
             {
                 translation += new Vector2(1, 0);
                 CurrentDirection = DIRECTION.Right;
+                
 
             }
 
