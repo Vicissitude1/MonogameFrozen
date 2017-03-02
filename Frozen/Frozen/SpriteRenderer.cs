@@ -19,7 +19,7 @@ namespace Frozen
         private float layerDepth;
         public Vector2 offset { get; set; }
 
-        public SpriteRenderer(GameObject gameObject, string spriteName, float layerDepth)
+        public SpriteRenderer(GameObject gameObject, string spriteName, float layerDepth) : base(gameObject)
         {
             this.spriteName = spriteName;
             this.layerDepth = layerDepth;

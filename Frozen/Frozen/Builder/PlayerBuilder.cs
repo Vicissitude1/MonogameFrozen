@@ -20,10 +20,10 @@ namespace Frozen
 
             gameObject.AddComponent(new Transform(gameObject, new Vector2(0,0)));
             gameObject.AddComponent(new SpriteRenderer(gameObject, "Papyrus", 150));
-            gameObject.AddComponent(new Player(gameObject, 200f));
+            gameObject.AddComponent(new Player(gameObject, 0f));
             gameObject.AddComponent(new Animator(gameObject));
         }
-        // den skal retrun GameObject, men lige pt returner den null for ikke at få fejl
+        
         public GameObject GetResult()
         {
             return gameObject;
