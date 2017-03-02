@@ -22,7 +22,8 @@ namespace Frozen
         {
             this.gameObject = gameObject;
             this.animator = animator;
-            this.transform = transform;   
+            this.transform = transform;
+            this.player = (Player)gameObject.GetComponent("Player"); 
         }
 
         public void Execute(ref DIRECTION CurrentDirection)

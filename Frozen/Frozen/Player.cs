@@ -78,7 +78,7 @@ namespace Frozen
             //animator.CreateAnimation(new Animation(3, 1070, 0, 150, 150, 5, Vector2.Zero),"DieLeft");
             //animator.CreateAnimation(new Animation(3, 1070, 3, 150, 150, 5, Vector2.Zero),"DieRight");
 
-            //animator.PlayAnimation("IdleFront");
+            animator.PlayAnimation("WalkRight");
         }
 
         public void OnAnimationDone(string animationName)
