@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
-    class Component
+          abstract class Component
     {
         public GameObject GameObject { get; private set; }
 
