@@ -61,10 +61,24 @@ namespace Frozen
 
         public void CreateAnimation()
         {
-            animator.CreateAnimation(new Animation(4, 0, 0, 90, 150, 6, Vector2.Zero), "IdleFront");
-            //animator.CreateAnimation(new Animation(4, 0, 0, 90, 150, 6, Vector2.Zero), "IdleFront");  
-                        
-            animator.PlayAnimation("IdleFront");
+            animator.CreateAnimation(new Animation(6, 284, 0, 93, 81, 6, Vector2.Zero),"WalkRight");
+            //animator.CreateAnimation(new Animation(4, 0, 4, 90, 150, 6, Vector2.Zero),"IdleBack");
+            //animator.CreateAnimation(new Animation(4, 0, 8, 90, 150, 6, Vector2.Zero),"IdleLeft");
+            //animator.CreateAnimation(new Animation(4, 0, 12, 90, 150, 6, Vector2.Zero),"IdleRight");
+            //animator.CreateAnimation(new Animation(4, 150, 0, 90, 150, 6, Vector2.Zero),"WalkFront");
+            //animator.CreateAnimation(new Animation(4, 150, 4, 90, 150, 6, Vector2.Zero),"WalkBack");
+            //animator.CreateAnimation(new Animation(4, 150, 8, 90, 150, 6, Vector2.Zero),"WalkLeft");
+            //animator.CreateAnimation(new Animation(4, 150, 12, 90, 150, 6, Vector2.Zero),"WalkRight");
+            //animator.CreateAnimation(new Animation(4, 300, 0, 145, 160, 8, new Vector2(-50, 0)),"AttackFront");
+            //animator.CreateAnimation(new Animation(4, 465, 0, 170, 155, 8, new Vector2(-20, 0)),"AttackBack");
+            //animator.CreateAnimation(new Animation(4, 620, 0, 150, 150, 8, Vector2.Zero),"AttackRight");
+            //animator.CreateAnimation(new Animation(4, 770, 0, 150, 150, 8, new Vector2(-60, 0)),"AttackLeft");
+            //animator.CreateAnimation(new Animation(3, 920, 0, 150, 150, 5, Vector2.Zero),"DieFront");
+            //animator.CreateAnimation(new Animation(3, 920, 3, 150, 150, 5, Vector2.Zero),"DieBack");
+            //animator.CreateAnimation(new Animation(3, 1070, 0, 150, 150, 5, Vector2.Zero),"DieLeft");
+            //animator.CreateAnimation(new Animation(3, 1070, 3, 150, 150, 5, Vector2.Zero),"DieRight");
+
+            animator.PlayAnimation("WalkRight");
         }
 
         public void OnAnimationDone(string animationName)
