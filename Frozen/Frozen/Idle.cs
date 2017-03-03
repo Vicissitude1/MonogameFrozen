@@ -16,7 +16,7 @@ namespace Frozen
         }
         public void Execute(ref DIRECTION currentDirection)
         {
-
+            animator.PlayAnimation("Idle" + currentDirection);
         }
 
     }
