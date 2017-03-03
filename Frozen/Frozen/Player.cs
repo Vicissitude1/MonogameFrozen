@@ -104,8 +104,7 @@ namespace Frozen
             //animator.CreateAnimation(new Animation(3, 1070, 3, 150, 150, 5, Vector2.Zero),"DieRight");
 
             //bitch
-            animator.PlayAnimation("IdleRight");
-
+            animator.PlayAnimation("IdleRight"); 
             
         }
 
