@@ -50,15 +50,15 @@ namespace Frozen
             set { pos = value; }
         }
 
-        public Matrix get_transformation(GraphicsDevice graphicsDevice)
-        {
-            transform =       
-              Matrix.CreateTranslation(new Vector3(-pos.X, -pos.Y, 0)) *
-                                         Matrix.CreateRotationZ(Rotation) *
-                                         Matrix.CreateScale(new Vector3(Zoom, Zoom, 1)) *
-                                         Matrix.CreateTranslation(new Vector3(ViewportWidth * 0.5f, ViewportHeight * 0.5f, 0));
-            return transform;
-        }
+        //public Matrix get_transformation(GraphicsDevice graphicsDevice)
+        //{
+        //    transform =       
+        //      Matrix.CreateTranslation(new Vector3(-pos.X, -pos.Y, 0)) *
+        //                                 Matrix.CreateRotationZ(Rotation) *
+        //                                 Matrix.CreateScale(new Vector3(Zoom, Zoom, 1)) *
+        //                                 Matrix.CreateTranslation(new Vector3(ViewportWidth * 0.5f, ViewportHeight * 0.5f, 0));
+        //    return transform;
+        //}
 
 
     }

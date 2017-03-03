@@ -117,8 +117,8 @@ namespace Frozen
         protected override void Draw(GameTime gameTime)
         {
 
-            Camera2d cam = new Camera2d();
-            cam.Pos = new Vector2(500.0f,200.0f);
+            //Camera2d cam = new Camera2d();
+            //cam.Pos = new Vector2(500.0f,200.0f);
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
