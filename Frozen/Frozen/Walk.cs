@@ -18,11 +18,12 @@ namespace Frozen
         private Transform transform;
         public Player player;
 
-        public Walk(Transform transform, GameObject gameObject, Animator animator)
+        public Walk(Transform transform, GameObject gameObject, Animator animator) 
         {
             this.gameObject = gameObject;
             this.animator = animator;
             this.transform = transform;
+            player = (Player)gameObject.GetComponent("Player");
             
         }
 
@@ -58,7 +59,7 @@ namespace Frozen
 
             }
 
-
+          
 
 
             gameObject.transform.Translate(translation * GameWorld.Instance.deltaTime * player.Speed);

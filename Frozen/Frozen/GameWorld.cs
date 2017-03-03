@@ -36,7 +36,7 @@ namespace Frozen
             }
         }
 
-        public GameWorld()
+        private GameWorld()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -108,12 +108,15 @@ namespace Frozen
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
-            for (int i = 0; i < gos.Count; i++)
-                gos[i].Update();
-
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
+            for (int i = 0; i < gos.Count; i++)
+            {
+                gos[i].Update();
+            }
+                
+
+         
 
             Camera.Instance.Rotation += 0.01f;
 
