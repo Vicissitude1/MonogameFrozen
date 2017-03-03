@@ -77,7 +77,7 @@ namespace Frozen
 
         public void CreateAnimation()
         {
-            animator.CreateAnimation(new Animation(6, 300, 0, 107, 100, 6, Vector2.Zero),"WalkRight");
+            animator.CreateAnimation(new Animation(6, 300, 1, 107, 100, 6, Vector2.Zero), "IdleFront");
             //animator.CreateAnimation(new Animation(4, 0, 4, 90, 150, 6, Vector2.Zero),"IdleBack");
             //animator.CreateAnimation(new Animation(4, 0, 8, 90, 150, 6, Vector2.Zero),"IdleLeft");
             //animator.CreateAnimation(new Animation(4, 0, 12, 90, 150, 6, Vector2.Zero),"IdleRight");
@@ -94,7 +94,9 @@ namespace Frozen
             //animator.CreateAnimation(new Animation(3, 1070, 0, 150, 150, 5, Vector2.Zero),"DieLeft");
             //animator.CreateAnimation(new Animation(3, 1070, 3, 150, 150, 5, Vector2.Zero),"DieRight");
 
-            animator.PlayAnimation("WalkRight");
+            animator.PlayAnimation("IdleFront");
+
+            strategy = new Idle(animator);
         }
 
        

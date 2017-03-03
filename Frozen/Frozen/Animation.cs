@@ -17,12 +17,14 @@ namespace Frozen
         public Rectangle[] rectangles { get; set; }
         public float Fps { get; set; }
         public Vector2 Offset { get; set; }
+        public int MyFrames { get; private set; }
 
         public Animation(int frames, int yPos, int xStartFrame, int width, int height, float fps, Vector2 offset)
         {
             rectangles = new Rectangle[frames];
             Offset = offset;
             this.Fps = fps;
+            this.MyFrames = frames;
             for (int i = 0; i < frames; i++)
             {
                 rectangles[i] = new Rectangle((i + xStartFrame) * width, yPos, width, height);

@@ -35,7 +35,9 @@ namespace Frozen
 
         public void Update()
         {
+
             timeElapsed += GameWorld.Instance.deltaTime;
+
             currentIndex = (int)(timeElapsed * fps);
 
             if (currentIndex > rectangles.Length - 1)

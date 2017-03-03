@@ -14,16 +14,17 @@ namespace Frozen
     {
         private GameObject gameObject;
         private Animator animator;
-        private DIRECTION direction;
+        
         private Transform transform;
         public Player player;
 
-        public Walk(Transform transform, GameObject gameObject, Animator animator)
+        public Walk(Transform transform, GameObject gameObject, Animator animator) 
         {
             this.gameObject = gameObject;
             this.animator = animator;
             this.transform = transform;
-            this.player = (Player)gameObject.GetComponent("Player"); 
+            player = (Player)gameObject.GetComponent("Player");
+            
         }
 
         public void Execute(ref DIRECTION CurrentDirection)
@@ -54,13 +55,15 @@ namespace Frozen
             {
                 translation += new Vector2(1, 0);
                 CurrentDirection = DIRECTION.Right;
+                
 
             }
 
-
+          
 
 
             gameObject.transform.Translate(translation * GameWorld.Instance.deltaTime * player.Speed);
+
             animator.PlayAnimation("Walk" + CurrentDirection);
         }
     }
