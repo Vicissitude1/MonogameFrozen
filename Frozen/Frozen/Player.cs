@@ -65,6 +65,14 @@ namespace Frozen
             {
                 canMove = true;
             }
+            if (animationName.Contains("Idle"))
+            {
+                canMove = true;
+            }
+            if (animationName.Contains("Walk"))
+            {
+                canMove = true;
+            }
         }
 
 
@@ -72,12 +80,13 @@ namespace Frozen
         public void LoadContent(ContentManager Content)
         {
             animator = (Animator)GameObject.GetComponent("Animator");
+            strategy = new Idle(animator);
             CreateAnimation();
         }
 
         public void CreateAnimation()
         {
-            animator.CreateAnimation(new Animation(6, 300, 1, 107, 100, 6, Vector2.Zero), "IdleFront");
+            animator.CreateAnimation(new Animation(5, 300, 1, 107, 100, 6, Vector2.Zero), "WalkRight");
             //animator.CreateAnimation(new Animation(4, 0, 4, 90, 150, 6, Vector2.Zero),"IdleBack");
             //animator.CreateAnimation(new Animation(4, 0, 8, 90, 150, 6, Vector2.Zero),"IdleLeft");
             //animator.CreateAnimation(new Animation(4, 0, 12, 90, 150, 6, Vector2.Zero),"IdleRight");
@@ -96,7 +105,7 @@ namespace Frozen
 
             animator.PlayAnimation("IdleFront");
 
-            strategy = new Idle(animator);
+            
         }
 
        
