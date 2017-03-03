@@ -14,9 +14,9 @@ namespace Frozen
         {
             this.animator = animator;
         }
-        public void Execute(ref DIRECTION currentDirection)
+        public void Execute(ref DIRECTION direction)
         {
-
+            //animator.PlayAnimation("Idle" + direction);
         }
 
     }
