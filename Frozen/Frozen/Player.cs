@@ -59,6 +59,22 @@ namespace Frozen
             strategy.Execute(ref direction);
         }
 
+        public void OnAnimationDone(string animationName)
+        {
+            if (animationName.Contains("Attack"))
+            {
+                canMove = true;
+            }
+        }
+
+
+
+        public void LoadContent(ContentManager Content)
+        {
+            animator = (Animator)GameObject.GetComponent("Animator");
+            CreateAnimation();
+        }
+
         public void CreateAnimation()
         {
             animator.CreateAnimation(new Animation(5, 300, 0, 107, 100, 6, Vector2.Zero), "WalkRight");
@@ -82,20 +98,6 @@ namespace Frozen
             strategy = new Idle(animator);
         }
 
-        public void OnAnimationDone(string animationName)
-        {
-            if (animationName.Contains("Attack"))
-            {
-                canMove = true;
-            }
-        }
-
-  
-
-        public void LoadContent(ContentManager Content)
-        {
-            animator = (Animator)GameObject.GetComponent("Animator");
-            CreateAnimation();
-        }
+       
     }
 }
