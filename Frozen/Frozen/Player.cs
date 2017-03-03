@@ -61,24 +61,23 @@ namespace Frozen
 
         public void CreateAnimation()
         {
-            animator.CreateAnimation(new Animation(6, 300, 1, 107, 100, 6, Vector2.Zero), "IdleFront");
-            //animator.CreateAnimation(new Animation(4, 0, 4, 90, 150, 6, Vector2.Zero),"IdleBack");
-            //animator.CreateAnimation(new Animation(4, 0, 8, 90, 150, 6, Vector2.Zero),"IdleLeft");
-            //animator.CreateAnimation(new Animation(4, 0, 12, 90, 150, 6, Vector2.Zero),"IdleRight");
-            //animator.CreateAnimation(new Animation(4, 150, 0, 90, 150, 6, Vector2.Zero),"WalkFront");
-            //animator.CreateAnimation(new Animation(4, 150, 4, 90, 150, 6, Vector2.Zero),"WalkBack");
-            //animator.CreateAnimation(new Animation(4, 150, 8, 90, 150, 6, Vector2.Zero),"WalkLeft");
-            //animator.CreateAnimation(new Animation(4, 150, 12, 90, 150, 6, Vector2.Zero),"WalkRight");
-            //animator.CreateAnimation(new Animation(4, 300, 0, 145, 160, 8, new Vector2(-50, 0)),"AttackFront");
-            //animator.CreateAnimation(new Animation(4, 465, 0, 170, 155, 8, new Vector2(-20, 0)),"AttackBack");
-            //animator.CreateAnimation(new Animation(4, 620, 0, 150, 150, 8, Vector2.Zero),"AttackRight");
-            //animator.CreateAnimation(new Animation(4, 770, 0, 150, 150, 8, new Vector2(-60, 0)),"AttackLeft");
-            //animator.CreateAnimation(new Animation(3, 920, 0, 150, 150, 5, Vector2.Zero),"DieFront");
-            //animator.CreateAnimation(new Animation(3, 920, 3, 150, 150, 5, Vector2.Zero),"DieBack");
-            //animator.CreateAnimation(new Animation(3, 1070, 0, 150, 150, 5, Vector2.Zero),"DieLeft");
-            //animator.CreateAnimation(new Animation(3, 1070, 3, 150, 150, 5, Vector2.Zero),"DieRight");
+            animator.CreateAnimation(new Animation(5, 300, 0, 107, 100, 6, Vector2.Zero), "WalkRight");
+            animator.CreateAnimation(new Animation(5, 700, 0, 107, 100, 6, Vector2.Zero), "WalkLeft");
+            animator.CreateAnimation(new Animation(4, 1, 0, 107, 100, 6, Vector2.Zero), "AttackOneRight");
+            animator.CreateAnimation(new Animation(4, 400, 0, 107, 100, 6, Vector2.Zero), "AttackOneLeft");
+            animator.CreateAnimation(new Animation(1, 100, 0, 107, 100, 6, Vector2.Zero), "JumpRight");
+            animator.CreateAnimation(new Animation(2, 100, 2, 107, 100, 6, Vector2.Zero), "JumpAttackRight");
+            animator.CreateAnimation(new Animation(1, 500, 0, 107, 100, 6, Vector2.Zero), "JumpLeft");
+            animator.CreateAnimation(new Animation(2, 500, 2, 107, 100, 6, Vector2.Zero), "JumpAttackLeft");
+            animator.CreateAnimation(new Animation(3, 200, 0, 107, 100, 6, Vector2.Zero), "AttackTwoRight");
+            animator.CreateAnimation(new Animation(3, 600, 0, 107, 100, 6, Vector2.Zero), "AttackTwoLeft");
+            //animator.CreateAnimation(new Animation(4, 620, 0, 150, 150, 8, Vector2.Zero), "Crouch");
+            animator.CreateAnimation(new Animation(1, 100, 0, 107, 100, 2, Vector2.Zero), "IdleRigt");
+            animator.CreateAnimation(new Animation(1, 400, 0, 107, 100, 2, Vector2.Zero), "IdleLeft");
+            //animator.CreateAnimation(new Animation(3, 1070, 0, 150, 150, 5, Vector2.Zero), "DieLeft");
+            //animator.CreateAnimation(new Animation(3, 1070, 3, 150, 150, 5, Vector2.Zero), "DieRight");
 
-            animator.PlayAnimation("IdleFront");
+            animator.PlayAnimation("IdleRight");
 
             strategy = new Idle(animator);
         }
