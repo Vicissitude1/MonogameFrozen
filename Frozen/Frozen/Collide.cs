@@ -30,9 +30,7 @@ using Microsoft.Xna.Framework.Content;
 //            }
 //        }
 
-//        public void LoadContent(ContentManager content)
-//        {
-            
-//        }
-//    }
-//}
+        public void LoadContent(ContentManager content);
+
+    }
+}

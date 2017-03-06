@@ -48,5 +48,9 @@ namespace Frozen
             }
         }
 
+        public void LoadContent(ContentManager content)
+        {
+            sprite = content.Load<Texture2D>("TempPlayer");
+        }
     }
 }
