@@ -33,7 +33,7 @@ namespace Frozen
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(sprite, GameObject.transform.Position + offset, rectangle, Color.BlanchedAlmond);
+            spriteBatch.Draw(sprite, GameObject.transform.Position + offset, rectangle, Color.BlanchedAlmond, 0f, Vector2.Zero, 1, SpriteEffects.None, 1);
         }
 
         
