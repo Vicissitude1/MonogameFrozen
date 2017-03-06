@@ -57,6 +57,9 @@ namespace Frozen
             Director director = new Director(new PlayerBuilder());
             gos.Add(director.Construct(Vector2.Zero));
 
+            director = new Director(new EnemyBuilder());
+            gos.Add(director.Construct(Vector2.Zero));
+
             Camera.Instance.Zoom = 1.0f;
              
 
@@ -118,9 +121,9 @@ namespace Frozen
 
          
 
-            Camera.Instance.Rotation += 0.01f;
+            //Camera.Instance.Rotation += 0.01f;
 
-            Camera.Instance.Pos = gos[0].transform.Position;
+            //Camera.Instance.Pos = gos[0].transform.Position;
 
             base.Update(gameTime);
         }
