@@ -33,12 +33,7 @@ namespace Frozen
 
             KeyboardState keyState = Keyboard.GetState();
 
-            if (keyState.IsKeyDown(Keys.W))
-            {
-                translation += new Vector2(0, -1);
-                CurrentDirection = DIRECTION.Back;
-
-            }
+            
             if (keyState.IsKeyDown(Keys.S))
             {
                 translation += new Vector2(0, 1);
