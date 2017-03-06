@@ -16,8 +16,8 @@ namespace Frozen
     public class GameWorld : Game
     {
 
-        
 
+        private float layerDepth;
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         public float deltaTime { get; private set; }
@@ -43,6 +43,7 @@ namespace Frozen
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            
         }
 
         /// <summary>
@@ -64,6 +65,8 @@ namespace Frozen
             gos.Add(director.Construct(Vector2.Zero));
 
             Camera.Instance.Zoom = 1.0f;
+            
+             
            
 
             //go.Add(director.Construct(new Player(, 50));
@@ -86,8 +89,8 @@ namespace Frozen
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            background = Content.Load<Texture2D>("background.jpg");
-            mainFrame = new Rectangle((int)(-GraphicsDevice.Viewport.Width * 0.5f), (int)(-GraphicsDevice.Viewport.Height * 0.5f), GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+            background = Content.Load<Texture2D>("background");
+           // mainFrame = new Rectangle((int)(-GraphicsDevice.Viewport.Width * 0.5f), (int)(-GraphicsDevice.Viewport.Height * 0.5f), GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
 
             foreach (GameObject go in gos)
             {

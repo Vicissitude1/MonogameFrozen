@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Frozen
 {
-    enum DIRECTION { Front, Back, Left, Right, JumpRight, JumpLeft, Crouch  };
+    enum DIRECTION { Back, Left, Right, JumpRight, JumpLeft, Crouch  };
     interface IStrategy
 
     {
