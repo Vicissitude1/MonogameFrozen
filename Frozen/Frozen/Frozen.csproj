@@ -58,6 +58,7 @@
     <Compile Include="Interface\ILoadable.cs" />
     <Compile Include="Interface\IStrategy.cs" />
     <Compile Include="Interface\IUpdateable.cs" />
+    <Compile Include="Jump.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
