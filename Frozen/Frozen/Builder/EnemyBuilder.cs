@@ -18,14 +18,14 @@ namespace Frozen
         {
 
             //Her skal vi bare bruge den enemy vi har fundet, og ha nskal bare sættes ind istedet for SlimeSheet, der kan også
-            //blive ændret i tallene 
+            //blive ændret i tallene
 
-            //gameObject = new GameObject();
+            gameObject = new GameObject();
 
-            //gameObject.AddComponent(new Transform(new Vector2(0, 0), gameObject));
-            //gameObject.AddComponent(new SpriteRenderer(gameObject, "SlimeSheet", 0));
-            //gameObject.AddComponent(new Enemy(gameObject, 200f));
-            //gameObject.AddComponent(new Animator(gameObject));
+            gameObject.AddComponent(new Transform(gameObject, new Vector2(0, 0)));
+            gameObject.AddComponent(new SpriteRenderer(gameObject, "SlimeSheet.png", 0));
+            gameObject.AddComponent(new Enemy(gameObject, 200f));
+            gameObject.AddComponent(new Animator(gameObject));
         }
 
         //husk den returne null for bare at fjerne fejlen!
