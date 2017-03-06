@@ -18,6 +18,8 @@ namespace Frozen
         private List<Component> components;
         private SpriteRenderer spriteRenderer;
 
+
+        //bliver aldrig kaldt
         public SpriteRenderer Spriterenderer
         {
             get

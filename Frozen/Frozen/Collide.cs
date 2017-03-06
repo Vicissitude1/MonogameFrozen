@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
-    class Collide
+    class Collide : ILoadable
     {
         private SpriteRenderer spriteRenderer;
         private Texture2D texture2D;
@@ -29,7 +29,9 @@ namespace Frozen
             }
         }
 
-        public void LoadContent(ContentManager content);
-
+        public void LoadContent(ContentManager content)
+        {
+            
+        }
     }
 }
