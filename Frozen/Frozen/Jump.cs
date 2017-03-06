@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
-    class Jump
+    class Jump 
     {
         Vector2 pos;
         Texture2D sprite;
@@ -25,10 +25,7 @@ namespace Frozen
             acc = 0.5f;
         }
 
-        public LoadContent(ContentManager content)
-        {
-            sprite = content.Load<Texture2D>("TempPlayer");
-        }
+       
 
         public void Update()
         {
