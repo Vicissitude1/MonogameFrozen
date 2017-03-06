@@ -10,26 +10,37 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
-    class Jump : ILoadable
+    class Jump : IStrategy
     {
         Vector2 pos;
         Texture2D sprite;
         bool jumped;
         float speed;
         float acc;
+        public Animator animator { get; set; }
 
-        public Jump(Vector2 pos)
+
+        public Jump(Animator animator)
         {
             this.pos = pos;
             jumped = false;
             acc = 0.5f;
+            this.animator = animator;
         }
 
         
         public void Update()
         {
+           
+        }
+
+        public void Execute(ref DIRECTION CurrentDirection)
+        {
+            Vector2 translation = Vector2.Zero;
+
+            
             KeyboardState x = Keyboard.GetState();
-            if (x.IsKeyDown(Keys.Space) && !jumped)
+            if (x.IsKeyDown(Keys.W) && !jumped)
             {
                 speed -= 20f;
                 jumped = true;
@@ -45,11 +56,11 @@ namespace Frozen
                 pos.Y = 400f;
                 jumped = false;
             }
+
+
+            animator.PlayAnimation("Jump" + CurrentDirection);
         }
 
-        public void LoadContent(ContentManager content)
-        {
-            sprite = content.Load<Texture2D>("TempPlayer");
-        }
+    
     }
 }

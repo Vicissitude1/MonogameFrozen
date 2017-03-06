@@ -38,12 +38,19 @@ namespace Frozen
             KeyboardState keyState = Keyboard.GetState();
             if (canMove)
             {
-                if(keyState.IsKeyDown(Keys.W) || keyState.IsKeyDown(Keys.A) || keyState.IsKeyDown(Keys.S) || keyState.IsKeyDown(Keys.D))
+                if(keyState.IsKeyDown(Keys.A) || keyState.IsKeyDown(Keys.S) || keyState.IsKeyDown(Keys.D))
                 {
                     if(!(strategy is Walk))
                     {
                         strategy = new Walk(GameObject.transform, GameObject, animator);
                     }
+                   
+                }
+
+                if (keyState.IsKeyDown(Keys.W))
+                {
+                    strategy = new Jump(animator);
+                    canMove = false;
                 }
 
                 else
@@ -55,6 +62,7 @@ namespace Frozen
                     strategy = new Attack(animator);
                     canMove = false;
                 }
+                
             }
             strategy.Execute(ref direction);
         }
@@ -70,6 +78,10 @@ namespace Frozen
                 canMove = true;
             }
             if (animationName.Contains("Walk"))
+            {
+                canMove = true;
+            }
+            if (animationName.Contains("Jump"))
             {
                 canMove = true;
             }
