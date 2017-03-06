@@ -23,6 +23,9 @@ namespace Frozen
         public float deltaTime { get; private set; }
         private List<GameObject> gos = new List<GameObject>();
         private static GameWorld instance;
+        private Texture2D background;
+        private Rectangle mainFrame;
+
 
         public static GameWorld Instance
         {
@@ -57,7 +60,7 @@ namespace Frozen
             Director director = new Director(new PlayerBuilder());
             gos.Add(director.Construct(Vector2.Zero));
 
-            Camera.Instance.Zoom = 1.0f;
+            Camera.Instance.Zoom = 0.5f;
              
 
             //go.Add(director.Construct(new Player(, 50));
@@ -80,14 +83,15 @@ namespace Frozen
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            background = Content.Load<Texture2D>("background");
+            mainFrame = new Rectangle((int)(-GraphicsDevice.Viewport.Width * 0.5f), (int)(-GraphicsDevice.Viewport.Height * 0.5f), GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
 
             foreach (GameObject go in gos)
             {
                 go.LoadContent(this.Content);
 
             }
-
-            // TODO: use this.Content to load your game content here
+             // TODO: use this.Content to load your game content here
         }
 
         /// <summary>
@@ -118,9 +122,9 @@ namespace Frozen
 
          
 
-            Camera.Instance.Rotation += 0.01f;
+            //Camera.Instance.Rotation += 0.01f;
 
-            Camera.Instance.Pos = gos[0].transform.Position;
+            //Camera.Instance.Pos = gos[0].transform.Position;
 
             base.Update(gameTime);
         }
@@ -136,13 +140,14 @@ namespace Frozen
 
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null,null,null,null,Camera.Instance.get_transformation(GraphicsDevice));
             foreach (GameObject go in gos)
             {
                 go.Draw(spriteBatch);
 
             }
-
+            spriteBatch.Draw(background, mainFrame, Color.White);
             spriteBatch.End();
 
             base.Draw(gameTime);
