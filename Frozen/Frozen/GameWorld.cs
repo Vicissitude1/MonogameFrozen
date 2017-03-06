@@ -161,9 +161,8 @@ namespace Frozen
             i++;
             spriteBatch.Draw(background, destRect, new Rectangle(i, 0, sourceRectangle.Width, sourceRectangle.Height), Color.BlanchedAlmond, 0f, Vector2.Zero,  SpriteEffects.None, 0.1f);
             if (i > background.Width) i = 0;
-            else if (i + sourceRectangle.Width > background.Width)
-                spriteBatch.Draw(background, new Rectangle(destRect.X + ((background.Width - i) * (destRect.Height / background.Height)), destRect.Y,
-                    destRect.X - ((background.Width - i) * (destRect.Height / background.Height)), destRect.Height), new Rectangle(0,0, sourceRectangle.Width - (background.Width - i), 120), Color.AliceBlue, 0, Vector2.Zero, SpriteEffects.None, 0); 
+            else if (i + sourceRectangle.Width >= background.Width)
+                spriteBatch.Draw(background, new Rectangle(GraphicsDevice.PresentationParameters.Bounds.Width - (i + sourceRectangle.Width - background.Width), 0, i + sourceRectangle.Width - background.Width, 120),  new Rectangle(0,0, (i + sourceRectangle.Width - (background.Width)), 120), Color.AliceBlue, 0, Vector2.Zero, SpriteEffects.None, 0); 
             spriteBatch.End();
 
             base.Draw(gameTime);
