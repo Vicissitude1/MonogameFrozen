@@ -61,17 +61,16 @@ namespace Frozen
             gos.Add(director.Construct(Vector2.Zero));
 
             Camera.Instance.Zoom = 1.0f;
-            Camera.Instance.Pos = 
-             
+           
 
             //go.Add(director.Construct(new Player(, 50));
 
-           // player = director.Construct(new Player()) 
+            // player = director.Construct(new Player()) 
             //director = new Director(new EnemyBuilder());
             //gos.Add(director.Construct(Vector2.Zero));
             // TODO: Add your initialization logic here
 
-            
+
 
             base.Initialize();
         }
