@@ -17,6 +17,8 @@ namespace Frozen
         public bool canMove;
         private IStrategy strategy;
         private DIRECTION direction;
+        bool jump;
+        float acc;
 
 
         public Player(GameObject go, float speed) :base(go)
@@ -84,7 +86,7 @@ namespace Frozen
 
         public void CreateAnimation()
         {
-           
+            
             animator.CreateAnimation(new Animation(5, 300, 0, 107, 100, 6, Vector2.Zero), "WalkRight");
             animator.CreateAnimation(new Animation(5, 700, 0, 107, 100, 6, Vector2.Zero), "WalkLeft");
             animator.CreateAnimation(new Animation(4, 1, 0, 107, 100, 6, Vector2.Zero), "AttackOneRight");
@@ -96,13 +98,14 @@ namespace Frozen
             animator.CreateAnimation(new Animation(3, 200, 0, 107, 100, 6, Vector2.Zero), "AttackTwoRight");
             animator.CreateAnimation(new Animation(3, 600, 0, 107, 100, 6, Vector2.Zero), "AttackTwoLeft");
             //animator.CreateAnimation(new Animation(4, 620, 0, 150, 150, 8, Vector2.Zero), "Crouch");
-            animator.CreateAnimation(new Animation(1, 100, 0, 107, 100, 2, Vector2.Zero), "IdleRight");
+            animator.CreateAnimation(new Animation(1, 100, 0, 107, 100, 2, Vector2.Zero), "IdleRigt");
             animator.CreateAnimation(new Animation(1, 400, 0, 107, 100, 2, Vector2.Zero), "IdleLeft");
             //animator.CreateAnimation(new Animation(3, 1070, 0, 150, 150, 5, Vector2.Zero), "DieLeft");
             //animator.CreateAnimation(new Animation(3, 1070, 3, 150, 150, 5, Vector2.Zero), "DieRight");
 
             //bitch
-            animator.PlayAnimation("IdleRight"); 
+            animator.PlayAnimation("IdleRight");
+
             
         }
 
