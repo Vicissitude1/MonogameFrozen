@@ -54,6 +54,7 @@ namespace Frozen
                 if (keyState.IsKeyDown(Keys.W))
                 {
                     strategy = new Jump(GameObject.transform, GameObject, animator);
+                    canMove = false;
 
                 }
                 if (keyState.IsKeyDown(Keys.Space))
@@ -98,19 +99,19 @@ namespace Frozen
         public void CreateAnimation()
         {
             
-            animator.CreateAnimation(new Animation(5, 300, 0, 107, 100, 6, Vector2.Zero), "WalkRight");
-            animator.CreateAnimation(new Animation(5, 700, 0, 107, 100, 6, Vector2.Zero), "WalkLeft");
-            animator.CreateAnimation(new Animation(4, 1, 0, 107, 100, 6, Vector2.Zero), "AttackOneRight");
-            animator.CreateAnimation(new Animation(4, 400, 0, 107, 100, 6, Vector2.Zero), "AttackOneLeft");
-            animator.CreateAnimation(new Animation(1, 100, 0, 107, 100, 6, Vector2.Zero), "JumpRight");
+            animator.CreateAnimation(new Animation(6, 300, 0, 107, 100, 6, Vector2.Zero), "WalkRight");
+            animator.CreateAnimation(new Animation(6, 700, 0, 107, 100, 6, Vector2.Zero), "WalkLeft");
+            animator.CreateAnimation(new Animation(5, 1, 0, 107, 100, 6, Vector2.Zero), "AttackOneRight");
+            animator.CreateAnimation(new Animation(5, 400, 0, 107, 100, 6, Vector2.Zero), "AttackOneLeft");
+            animator.CreateAnimation(new Animation(2, 100, 0, 107, 100, 6, Vector2.Zero), "JumpRight");
             animator.CreateAnimation(new Animation(2, 100, 2, 107, 100, 6, Vector2.Zero), "JumpAttackRight");
-            animator.CreateAnimation(new Animation(1, 500, 0, 107, 100, 6, Vector2.Zero), "JumpLeft");
+            animator.CreateAnimation(new Animation(2, 500, 0, 107, 100, 6, Vector2.Zero), "JumpLeft");
             animator.CreateAnimation(new Animation(2, 500, 2, 107, 100, 6, Vector2.Zero), "JumpAttackLeft");
             animator.CreateAnimation(new Animation(3, 200, 0, 107, 100, 6, Vector2.Zero), "AttackTwoRight");
             animator.CreateAnimation(new Animation(3, 600, 0, 107, 100, 6, Vector2.Zero), "AttackTwoLeft");
             //animator.CreateAnimation(new Animation(4, 620, 0, 150, 150, 8, Vector2.Zero), "Crouch");
-            animator.CreateAnimation(new Animation(1, 100, 0, 107, 100, 2, Vector2.Zero), "IdleRight");
-            animator.CreateAnimation(new Animation(1, 400, 0, 107, 100, 2, Vector2.Zero), "IdleLeft");
+            animator.CreateAnimation(new Animation(2, 0, 0, 107, 100, 2, Vector2.Zero), "IdleRight");
+            animator.CreateAnimation(new Animation(2, 400, 0, 107, 100, 2, Vector2.Zero), "IdleLeft");
             //animator.CreateAnimation(new Animation(3, 1070, 0, 150, 150, 5, Vector2.Zero), "DieLeft");
             //animator.CreateAnimation(new Animation(3, 1070, 3, 150, 150, 5, Vector2.Zero), "DieRight");
 
