@@ -21,13 +21,17 @@ namespace Frozen
         public Enemy(GameObject gameObject, float speed) : base(gameObject)
         {
             this.speed = speed;
-
+            speed = 10;
         }
 
 
         public void Execute(ref DIRECTION currentDirection)
         {
-            
+            Vector2 V = GameWorld.Instance.gos.Find(g => g.GetComponent("Player") != null).transform.Position - GameObject.transform.Position;
+            V.Normalize();
+            GameObject.transform.Translate(V * speed * GameWorld.Instance.deltaTime);
+
+
         }
 
         public void LoadContent(ContentManager content)
@@ -44,7 +48,8 @@ namespace Frozen
 
         public void Update()
         {
-            
+            //Husk at alt skal hentes gennem noget andet så for at få player position 
+       
         }
 
         public void CreateAnimations()

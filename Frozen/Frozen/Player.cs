@@ -58,7 +58,7 @@ namespace Frozen
                     strategy = new Jump(GameObject.transform, GameObject, animator);
                     canMove = false;
                     canJump = false;
-
+                   
                 }
                 if (keyState.IsKeyDown(Keys.E))
                 {
@@ -96,7 +96,7 @@ namespace Frozen
             }
             if (animationName.Contains("Jump"))
             {
-                canMove = true;
+                canMove = false;
             }
         }
 

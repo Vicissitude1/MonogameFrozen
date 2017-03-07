@@ -19,6 +19,14 @@ namespace Frozen
         private float layerDepth;
         public Vector2 offset { get; set; }
 
+
+        //test bacgroundscroll
+        //The size of the Sprite
+        public Rectangle Size;
+
+        //Used to size the Sprite up or down from the original image
+        public float Scale = 1.0f;
+
         public SpriteRenderer(GameObject gameObject, string spriteName, float layerDepth) : base(gameObject)
         {
             this.spriteName = spriteName;
@@ -28,12 +36,16 @@ namespace Frozen
        public void LoadContent(ContentManager content)
         {
             sprite = content.Load<Texture2D>(spriteName);
+            
+            //Size = new Rectangle(0, 0, (int)(sprite.Width * Scale), (int)(sprite.Height * Scale));
+
         }
 
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(sprite, GameObject.transform.Position + offset, rectangle, Color.BlanchedAlmond, 0f, Vector2.Zero, 1, SpriteEffects.None, 1);
+            //spriteBatch.Draw(sprite, GameObject.transform.Position + offset, new Rectangle(0, 0, sprite.Width, sprite.Height), Color.White, 0.0f, Vector2.Zero, Scale, SpriteEffects.None, 0);
         }
 
         

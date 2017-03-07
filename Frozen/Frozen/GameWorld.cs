@@ -13,7 +13,7 @@ namespace Frozen
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class GameWorld : Game
+    class GameWorld : Game
     {
 
 
@@ -21,11 +21,12 @@ namespace Frozen
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         public float deltaTime { get; private set; }
-        private List<GameObject> gos = new List<GameObject>();
+        public List<GameObject> gos = new List<GameObject>();
         private static GameWorld instance;
         private Texture2D background;
         private Rectangle destRect;
         private Rectangle sourceRectangle;
+
 
 
         int i = 0;
