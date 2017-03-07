@@ -15,6 +15,7 @@ namespace Frozen
         public float Speed { get; private set; }
         public Animator animator;
         public bool canMove;
+        public bool canJump;
         private IStrategy strategy;
         private DIRECTION direction;
     
@@ -24,12 +25,13 @@ namespace Frozen
         {
             this.Speed = speed;
             canMove = true;
+            canJump = true;
         }
         
-        public void Execute(ref DIRECTION CurrendtDirecion)
-        {
+        //public void Execute(ref DIRECTION CurrendtDirecion)
+        //{
 
-        }
+        //}
 
 
         public void Update()
@@ -55,14 +57,21 @@ namespace Frozen
                 {
                     strategy = new Jump(GameObject.transform, GameObject, animator);
                     canMove = false;
+                    canJump = false;
 
                 }
-                if (keyState.IsKeyDown(Keys.Space))
+                if (keyState.IsKeyDown(Keys.E))
                 {
                     strategy = new Attack(animator);
                     canMove = false;
                 }
-                
+                else if (keyState.IsKeyDown(Keys.Q))
+                {
+                    strategy = new Attack(animator);
+                    canMove = false;
+                }
+
+
             }
             strategy.Execute(ref direction);
         }
@@ -70,6 +79,10 @@ namespace Frozen
         public void OnAnimationDone(string animationName)
         {
             if (animationName.Contains("Attack"))
+            {
+                canMove = true;
+            }
+            if (animationName.Contains("AttackTwo"))
             {
                 canMove = true;
             }
@@ -101,14 +114,14 @@ namespace Frozen
             
             animator.CreateAnimation(new Animation(6, 300, 0, 107, 100, 6, Vector2.Zero), "WalkRight");
             animator.CreateAnimation(new Animation(6, 700, 0, 107, 100, 6, Vector2.Zero), "WalkLeft");
-            animator.CreateAnimation(new Animation(5, 1, 0, 107, 100, 6, Vector2.Zero), "AttackOneRight");
-            animator.CreateAnimation(new Animation(5, 400, 0, 107, 100, 6, Vector2.Zero), "AttackOneLeft");
-            animator.CreateAnimation(new Animation(2, 100, 0, 107, 100, 6, Vector2.Zero), "JumpRight");
-            animator.CreateAnimation(new Animation(2, 100, 2, 107, 100, 6, Vector2.Zero), "JumpAttackRight");
-            animator.CreateAnimation(new Animation(2, 500, 0, 107, 100, 6, Vector2.Zero), "JumpLeft");
-            animator.CreateAnimation(new Animation(2, 500, 2, 107, 100, 6, Vector2.Zero), "JumpAttackLeft");
-            animator.CreateAnimation(new Animation(3, 200, 0, 107, 100, 6, Vector2.Zero), "AttackTwoRight");
-            animator.CreateAnimation(new Animation(3, 600, 0, 107, 100, 6, Vector2.Zero), "AttackTwoLeft");
+            animator.CreateAnimation(new Animation(5, 1, 0, 107, 100, 6, Vector2.Zero), "AttackRight");
+            animator.CreateAnimation(new Animation(5, 400, 0, 107, 100, 6, Vector2.Zero), "AttackLeft");
+            animator.CreateAnimation(new Animation(2, 100, 0, 107, 100, 2, Vector2.Zero), "JumpRight");
+            animator.CreateAnimation(new Animation(3, 100, 2, 107, 100, 6, Vector2.Zero), "JumpAttackRight");
+            animator.CreateAnimation(new Animation(2, 500, 0, 107, 100, 2, Vector2.Zero), "JumpLeft");
+            animator.CreateAnimation(new Animation(3, 500, 2, 107, 100, 6, Vector2.Zero), "JumpAttackLeft");
+            animator.CreateAnimation(new Animation(4, 200, 0, 107, 100, 6, Vector2.Zero), "AttackTwoRight");
+            animator.CreateAnimation(new Animation(4, 600, 0, 107, 100, 6, Vector2.Zero), "AttackTwoLeft");
             //animator.CreateAnimation(new Animation(4, 620, 0, 150, 150, 8, Vector2.Zero), "Crouch");
             animator.CreateAnimation(new Animation(2, 0, 0, 107, 100, 2, Vector2.Zero), "IdleRight");
             animator.CreateAnimation(new Animation(2, 400, 0, 107, 100, 2, Vector2.Zero), "IdleLeft");

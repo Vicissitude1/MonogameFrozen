@@ -17,6 +17,8 @@ namespace Frozen
         public void Execute(ref DIRECTION CurrentDirection)
         {
             animator.PlayAnimation("Attack" + CurrentDirection);
+
+            animator.PlayAnimation("AttackTwo" + CurrentDirection);
         }
     }
 }
