@@ -24,7 +24,11 @@ namespace Frozen
         private List<GameObject> gos = new List<GameObject>();
         private static GameWorld instance;
         private Texture2D background;
-        private Rectangle mainFrame;
+        private Rectangle destRect;
+        private Rectangle sourceRectangle;
+
+
+        int i = 0;
 
 
         public static GameWorld Instance
@@ -90,7 +94,8 @@ namespace Frozen
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             background = Content.Load<Texture2D>("background");
-           // mainFrame = new Rectangle((int)(-GraphicsDevice.Viewport.Width * 0.5f), (int)(-GraphicsDevice.Viewport.Height * 0.5f), GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+            destRect = new Rectangle((int)(-GraphicsDevice.Viewport.Width * 0.5f), (int)(-GraphicsDevice.Viewport.Height * 0.5f), GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+            sourceRectangle = new Rectangle(0, 0, 213, 120);
 
             foreach (GameObject go in gos)
             {
@@ -143,17 +148,21 @@ namespace Frozen
         {
 
            
-
+            
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
 
-            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null,null,null,null,Camera.Instance.get_transformation(GraphicsDevice));
+            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, null,null,null,null,Camera.Instance.get_transformation(GraphicsDevice));
             foreach (GameObject go in gos)
             {
                 go.Draw(spriteBatch);
 
             }
-            spriteBatch.Draw(background, mainFrame, Color.White);
+            i++;
+            spriteBatch.Draw(background, destRect, new Rectangle(i, 0, sourceRectangle.Width, sourceRectangle.Height), Color.BlanchedAlmond, 0f, Vector2.Zero,  SpriteEffects.None, 0.1f);
+            if (i > background.Width) i = 0;
+            else if (i + sourceRectangle.Width >= background.Width)
+                spriteBatch.Draw(background, new Rectangle(GraphicsDevice.PresentationParameters.Bounds.Width - (i + sourceRectangle.Width - background.Width), 0, i + sourceRectangle.Width - background.Width, 120),  new Rectangle(0,0, (i + sourceRectangle.Width - (background.Width)), 120), Color.AliceBlue, 0, Vector2.Zero, SpriteEffects.None, 0); 
             spriteBatch.End();
 
             base.Draw(gameTime);
