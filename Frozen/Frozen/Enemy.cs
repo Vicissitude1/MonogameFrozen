@@ -65,7 +65,7 @@ namespace Frozen
             animator.CreateAnimation(new Animation(4, 400, 4, 100, 100, 5, Vector2.Zero), "DieRight");
 
 
-           
+
 
             animator.PlayAnimation("IdleRight");
             animator.PlayAnimation("IdleLeft");

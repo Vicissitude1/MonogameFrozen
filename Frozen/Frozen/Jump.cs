@@ -18,14 +18,23 @@ namespace Frozen
         float speed;
         float acc;
         public Animator animator { get; set; }
+        private GameObject gameObject;
+        private Transform transform;
+        public Player player;
 
 
-        public Jump(Animator animator)
+
+        public Jump(Transform transform, GameObject gameObject, Animator animator)
         {
             this.pos = pos;
             jumped = false;
             acc = 0.5f;
             this.animator = animator;
+            this.gameObject = gameObject;
+            this.animator = animator;
+            this.transform = transform;
+            player = (Player)gameObject.GetComponent("Player");
+
         }
 
        
@@ -58,6 +67,7 @@ namespace Frozen
                 jumped = false;
             }
 
+        
 
             animator.PlayAnimation("Jump" + CurrentDirection);
         }
