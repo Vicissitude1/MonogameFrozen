@@ -135,7 +135,7 @@ namespace Frozen
 
             //Camera.Instance.Rotation += 0.01f;
 
-            //Camera.Instance.Pos = gos[0].transform.Position;
+            Camera.Instance.Pos = gos[0].transform.Position;
 
             base.Update(gameTime);
         }
@@ -158,11 +158,9 @@ namespace Frozen
                 go.Draw(spriteBatch);
 
             }
-            i++;
+         
             spriteBatch.Draw(background, destRect, new Rectangle(i, 0, sourceRectangle.Width, sourceRectangle.Height), Color.BlanchedAlmond, 0f, Vector2.Zero,  SpriteEffects.None, 0.1f);
-            if (i > background.Width) i = 0;
-            else if (i + sourceRectangle.Width >= background.Width)
-                spriteBatch.Draw(background, new Rectangle(GraphicsDevice.PresentationParameters.Bounds.Width - (i + sourceRectangle.Width - background.Width), 0, i + sourceRectangle.Width - background.Width, 120),  new Rectangle(0,0, (i + sourceRectangle.Width - (background.Width)), 120), Color.AliceBlue, 0, Vector2.Zero, SpriteEffects.None, 0); 
+            
             spriteBatch.End();
 
             base.Draw(gameTime);

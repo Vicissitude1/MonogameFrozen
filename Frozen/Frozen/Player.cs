@@ -67,12 +67,13 @@ namespace Frozen
                 }
                 else if (keyState.IsKeyDown(Keys.Q))
                 {
-                    strategy = new Attack(animator);
+                    strategy = new Attack2(animator);
                     canMove = false;
                 }
 
 
             }
+
             strategy.Execute(ref direction);
         }
 
@@ -91,10 +92,6 @@ namespace Frozen
                 canMove = true;
             }
             if (animationName.Contains("Walk"))
-            {
-                canMove = true;
-            }
-            if (animationName.Contains("Jump"))
             {
                 canMove = true;
             }
