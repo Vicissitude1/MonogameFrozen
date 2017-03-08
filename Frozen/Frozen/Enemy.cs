@@ -67,8 +67,9 @@ namespace Frozen
 
             else
             {
-            V.Normalize();
-            GameObject.transform.Translate(V * speed * GameWorld.Instance.deltaTime);
+                V.Normalize();
+                V.Y = 0;
+                GameObject.transform.Translate(V * speed * GameWorld.Instance.deltaTime);
                 animator.PlayAnimation("Walk" + currentDirection);
             }
 

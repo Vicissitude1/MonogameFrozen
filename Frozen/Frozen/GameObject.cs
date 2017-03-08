@@ -55,6 +55,12 @@ namespace Frozen
 
 
         }
+        public GameObject(Vector2 position)
+        {
+            components = new List<Component>();
+            this.transform = new Transform(this, position);
+            AddComponent(transform);
+        }
 
         public void AddComponent(Component component)
         {

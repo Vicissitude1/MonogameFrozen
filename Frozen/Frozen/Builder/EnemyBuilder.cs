@@ -20,9 +20,9 @@ namespace Frozen
             //Her skal vi bare bruge den enemy vi har fundet, og ha nskal bare sættes ind istedet for SlimeSheet, der kan også
             //blive ændret i tallene
 
-            gameObject = new GameObject();
+            gameObject = new GameObject(new Vector2(0, 100)); //Vi skal ikke ligge en ny transform til vores builder
 
-            gameObject.AddComponent(new Transform(gameObject, new Vector2(0, 0)));
+            //gameObject.AddComponent(new Transform(gameObject, new Vector2(0, 200)));
             gameObject.AddComponent(new SpriteRenderer(gameObject, "SpritesheeptAlmostFinalenemy", 0));
             gameObject.AddComponent(new Enemy(gameObject, 100f, 100));
             gameObject.AddComponent(new Animator(gameObject));
