@@ -49,7 +49,7 @@ namespace Frozen
             
             if (!jumped)
             {
-                speed -= 20f;
+                speed -= 10f;
                 jumped = true;
             }
 
