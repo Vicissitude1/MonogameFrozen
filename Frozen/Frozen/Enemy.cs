@@ -55,21 +55,24 @@ namespace Frozen
              Vector2 V = GameWorld.Instance.gos.Find(g => g.GetComponent("Player") != null).transform.Position - GameObject.transform.Position;
 
             currentDirection = V.X > 0 ? DIRECTION.Right : DIRECTION.Left;
-            animator.PlayAnimation("Walk" + currentDirection);
-          
-            //mums = V som er lig med afstanden mellem spiller og fjende
-            if (V.Length() <= 7)
-            {
-                
-
-            // animator.PlayAnimation("Attack" + currentDirection || "AttackTwo" + currentDirection);
-
-
-            }
             
 
+            //mums = V som er lig med afstanden mellem spiller og fjende
+            
+            if (V.Length() <= 50)
+            {
+
+                animator.PlayAnimation("Attack" + currentDirection);
+            }
+
+            else
+            {
             V.Normalize();
             GameObject.transform.Translate(V * speed * GameWorld.Instance.deltaTime);
+                animator.PlayAnimation("Walk" + currentDirection);
+            }
+
+            
             
        
         }
