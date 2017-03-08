@@ -45,10 +45,9 @@ namespace Frozen
 
         public void Execute(ref DIRECTION CurrentDirection)
         {
-            Vector2 translation = Vector2.Zero;
+            Vector2 translation = Vector2.Zero; //Fjernede keybord knap W
             
-            KeyboardState x = Keyboard.GetState();
-            if (x.IsKeyDown(Keys.W) && !jumped)
+            if (!jumped)
             {
                 speed -= 20f;
                 jumped = true;
@@ -59,11 +58,11 @@ namespace Frozen
                 transform.Translate(new Vector2(0, speed));
                 speed += acc;
             }
-            if (transform.Position.Y > 200)
+            if (transform.Position.Y > 100)
             {
                 transform.Translate(new Vector2(0, -1));
                 jumped = false;
-                gameObject.Player.canMove = true;
+                player.canMove = true;
             }
 
         

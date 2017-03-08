@@ -26,6 +26,7 @@ namespace Frozen
         private Texture2D background;
         private Rectangle destRect;
         private Rectangle sourceRectangle;
+        Floor floor;
 
 
         int i = 0;
@@ -63,12 +64,15 @@ namespace Frozen
             gos = new List<GameObject>();
 
             Director director = new Director(new PlayerBuilder());
-            gos.Add(director.Construct(Vector2.Zero));
+            gos.Add(director.Construct(new Vector2(100, 100)));
 
             director = new Director(new EnemyBuilder());
             gos.Add(director.Construct(Vector2.Zero));
 
             Camera.Instance.Zoom = 1.0f;
+
+            floor = new Floor();
+            floor.Initialize(Content);
             
              
            
@@ -159,8 +163,10 @@ namespace Frozen
 
             }
          
-            spriteBatch.Draw(background, destRect, new Rectangle(i, 0, sourceRectangle.Width, sourceRectangle.Height), Color.BlanchedAlmond, 0f, Vector2.Zero,  SpriteEffects.None, 0.1f);
+            spriteBatch.Draw(background, destRect, new Rectangle(i, 0, sourceRectangle.Width, sourceRectangle.Height), Color.BlanchedAlmond, 0f, Vector2.Zero,  SpriteEffects.None, 0f);
             
+
+            floor.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);

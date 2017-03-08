@@ -47,6 +47,7 @@
     <Compile Include="Component.cs" />
     <Compile Include="Die.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="Floor.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Builder\Director.cs" />
     <Compile Include="Builder\EnemyBuilder.cs" />

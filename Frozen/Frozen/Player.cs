@@ -24,8 +24,8 @@ namespace Frozen
         public Player(GameObject go, float speed) :base(go)
         {
             this.Speed = speed;
-            canMove = true;
-            canJump = true;
+            canMove = false;
+            canJump = false;
         }
         
         //public void Execute(ref DIRECTION CurrendtDirecion)
@@ -102,7 +102,7 @@ namespace Frozen
         public void LoadContent(ContentManager Content)
         {
             animator = (Animator)GameObject.GetComponent("Animator");
-            strategy = new Idle(animator);
+            strategy = new Jump(GameObject.transform, GameObject, animator);
             CreateAnimation();
         }
 
