@@ -12,8 +12,9 @@ namespace Frozen
 {
     class Jump : IStrategy
     {
-        Vector2 pos;
-        Texture2D sprite;
+        //Vector2 pos;
+        //Texture2D sprite;
+        int health;
         bool jumped;
         float speed;
         float acc;
@@ -60,12 +61,14 @@ namespace Frozen
             }
             if (transform.Position.Y > 110)
             {
-                transform.Translate(new Vector2(0, -10));
+                transform.Translate(new Vector2(0, -1));
                 jumped = false;
+
                 player.canMove = true;
             }
+           
 
-        
+
 
             animator.PlayAnimation("Jump" + CurrentDirection);
         }

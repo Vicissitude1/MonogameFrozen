@@ -18,14 +18,17 @@ namespace Frozen
         public bool canJump;
         private IStrategy strategy;
         private DIRECTION direction;
+        int health;
     
 
 
-        public Player(GameObject go, float speed) :base(go)
+        public Player(GameObject go, float speed, int health) :base(go)
         {
             this.Speed = speed;
             canMove = false;
             canJump = false;
+            this.health = health;
+            health = 100;
         }
         
         //public void Execute(ref DIRECTION CurrendtDirecion)
@@ -95,6 +98,10 @@ namespace Frozen
             {
                 canMove = true;
             }
+            if (animationName.Contains("Crouch"))
+            {
+                canMove = true;
+            }
         }
 
 
@@ -119,11 +126,12 @@ namespace Frozen
             animator.CreateAnimation(new Animation(3, 500, 2, 107, 100, 6, Vector2.Zero), "JumpAttackLeft");
             animator.CreateAnimation(new Animation(4, 200, 0, 107, 100, 6, Vector2.Zero), "AttackTwoRight");
             animator.CreateAnimation(new Animation(4, 600, 0, 107, 100, 6, Vector2.Zero), "AttackTwoLeft");
-            //animator.CreateAnimation(new Animation(4, 620, 0, 150, 150, 8, Vector2.Zero), "Crouch");
+            //animator.CreateAnimation(new Animation(1, 620, 1, 107, 100, 1, Vector2.Zero), "WalkCrouchLeft");
+            //animator.CreateAnimation(new Animation(1, 800, 1, 107, 100, 1, Vector2.Zero), "WalkCrouch");
             animator.CreateAnimation(new Animation(2, 0, 0, 107, 100, 2, Vector2.Zero), "IdleRight");
             animator.CreateAnimation(new Animation(2, 400, 0, 107, 100, 2, Vector2.Zero), "IdleLeft");
-            //animator.CreateAnimation(new Animation(3, 1070, 0, 150, 150, 5, Vector2.Zero), "DieLeft");
-            //animator.CreateAnimation(new Animation(3, 1070, 3, 150, 150, 5, Vector2.Zero), "DieRight");
+            animator.CreateAnimation(new Animation(2, 900, 3, 107, 150, 5, Vector2.Zero), "DieLeft");
+            animator.CreateAnimation(new Animation(2, 900, 0, 107, 100, 5, Vector2.Zero), "DieRight");
 
             animator.PlayAnimation("IdleRight");
 
