@@ -50,7 +50,7 @@ namespace Frozen
              Vector2 V = GameWorld.Instance.gos.Find(g => g.GetComponent("Player") != null).transform.Position - GameObject.transform.Position;
             V.Normalize();
             GameObject.transform.Translate(V * speed * GameWorld.Instance.deltaTime);
-            if()
+           // if()
        
         }
 
