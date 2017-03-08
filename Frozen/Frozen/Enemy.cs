@@ -17,6 +17,8 @@ namespace Frozen
         private float speed;
         private IStrategy strategy;
         int health;
+        bool canMove;
+        int i; 
 
 
         public Enemy(GameObject gameObject, float speed, int Health) : base(gameObject)
@@ -25,7 +27,8 @@ namespace Frozen
             speed = 10;
             this.health = Health;
             health = 100;
-            
+            canMove = false;
+            i = 0;
 
         }
 
@@ -46,7 +49,11 @@ namespace Frozen
 
         public void OnAnimationDone(string animationName)
         {
-            
+            if (animationName.Contains("Attack"))
+            {
+                Random rnd = new Random(DateTime.Now.Millisecond);
+                i = rnd.Next(0, 2);
+            }
         }
 
         public void Update()
@@ -57,12 +64,25 @@ namespace Frozen
             currentDirection = V.X > 0 ? DIRECTION.Right : DIRECTION.Left;
             
 
-            //mums = V som er lig med afstanden mellem spiller og fjende
+            // V er lig med afstanden mellem spiller og fjende
             
             if (V.Length() <= 50)
             {
+                
+               
+                
+                if (i == 0)
+                {
 
                 animator.PlayAnimation("Attack" + currentDirection);
+                    
+                }
+               else
+                {
+                animator.PlayAnimation("AttackTwo" + currentDirection);
+                    
+                }
+                
             }
 
             else

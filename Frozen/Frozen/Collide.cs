@@ -14,13 +14,20 @@ namespace Frozen
     {
         private SpriteRenderer spriteRenderer;
         private Texture2D texture2D;
+        
 
-
+        public Collide (GameObject gameObject) : base(gameObject)
+        {
+            this.GameObject = gameObject;
+        }
 
         public Rectangle CollisionBox
         {
+            
             get
             {
+                GameWorld.Instance.GraphicsDevice.DrawPrimitives(PrimitiveType.TriangleStrip, 9, 2);
+                GameWorld.Instance.GraphicsDevice.Flush();
                 return new Rectangle
                     (
                         (int)(GameObject.transform.Position.X + spriteRenderer.offset.X),
@@ -34,7 +41,7 @@ namespace Frozen
          public void LoadContent(ContentManager content)
         {
             spriteRenderer = (SpriteRenderer)GameObject.GetComponent("SpriteRenderer");
-            texture2D = content.Load<Texture2D>("CollisionTexture");
+            texture2D = content.Load<Texture2D>("CollisionTexture.png");
 
 
         }

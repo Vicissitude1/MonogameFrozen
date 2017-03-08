@@ -80,6 +80,9 @@
     <Content Include="Content\background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\CollisionTexture.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\SlimeSheet.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
