@@ -59,7 +59,6 @@ namespace Frozen
                 transform.Translate(new Vector2(0, speed));
                 speed += acc;
             }
-          
             if (transform.Position.Y > 110)
             {
                 transform.Translate(new Vector2(0, -1));
