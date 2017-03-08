@@ -45,7 +45,7 @@ namespace Frozen
 
         public void Execute(ref DIRECTION CurrentDirection)
         {
-            Vector2 translation = Vector2.Zero; //Fjernede keybord knap W
+            Vector2 translation = Vector2.Zero; //Fjernede keybord knap W YO
             
             if (!jumped)
             {
