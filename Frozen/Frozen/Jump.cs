@@ -58,10 +58,11 @@ namespace Frozen
                 transform.Translate(new Vector2(0, speed));
                 speed += acc;
             }
-            if (transform.Position.Y > 50)
+            if (transform.Position.Y > 100)
             {
-                transform.Translate(new Vector2(0, -10));
+                transform.Translate(new Vector2(0, -1));
                 jumped = false;
+
                 player.canMove = true;
             }
 
