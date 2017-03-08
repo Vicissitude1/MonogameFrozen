@@ -36,7 +36,7 @@ namespace Frozen
             
             if (keyState.IsKeyDown(Keys.S))
             {
-                translation += new Vector2(0, 1);
+                translation += new Vector2(0, 0);
                 CurrentDirection = DIRECTION.Crouch;
 
             }

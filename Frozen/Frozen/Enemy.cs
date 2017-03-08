@@ -46,10 +46,11 @@ namespace Frozen
 
         public void Update()
         {
+            //Husk at alt skal hentes gennem noget andet så for at få player position 
              Vector2 V = GameWorld.Instance.gos.Find(g => g.GetComponent("Player") != null).transform.Position - GameObject.transform.Position;
             V.Normalize();
             GameObject.transform.Translate(V * speed * GameWorld.Instance.deltaTime);
-            //Husk at alt skal hentes gennem noget andet så for at få player position 
+            if()
        
         }
 
@@ -57,23 +58,27 @@ namespace Frozen
         {
 
 
-            animator.CreateAnimation(new Animation(1, 0, 0, 100, 100, 0, Vector2.Zero), "IdleFront");
-            animator.CreateAnimation(new Animation(1, 0, 1, 100, 100, 0, Vector2.Zero), "IdleLeft");
-            animator.CreateAnimation(new Animation(1, 0, 2, 100, 100, 0, Vector2.Zero), "IdleRight");
-            animator.CreateAnimation(new Animation(1, 0, 3, 100, 100, 0, Vector2.Zero), "IdleBack");
-            animator.CreateAnimation( new Animation(4, 100, 0, 100, 100, 5, Vector2.Zero), "WalkFront");
-            animator.CreateAnimation( new Animation(4, 100, 4, 100, 100, 5, Vector2.Zero), "WalkBack");
-            animator.CreateAnimation( new Animation(4, 200, 0, 100, 100, 5, Vector2.Zero), "WalkLeft");
-            animator.CreateAnimation( new Animation(4, 200, 4, 100, 100, 5, Vector2.Zero), "WalkRight");
-            animator.CreateAnimation(new Animation(4, 300, 0, 100, 100, 5, Vector2.Zero), "DieBack");
-            animator.CreateAnimation(new Animation(4, 300, 4, 100, 100, 5, Vector2.Zero), "DieFront");
-            animator.CreateAnimation(new Animation(4, 400, 0, 100, 100, 5, Vector2.Zero), "DieLeft");
-            animator.CreateAnimation(new Animation(4, 400, 4, 100, 100, 5, Vector2.Zero), "DieRight");
+            animator.CreateAnimation(new Animation(6, 300, 0, 107, 100, 6, Vector2.Zero), "WalkRight");
+            animator.CreateAnimation(new Animation(6, 700, 0, 107, 100, 6, Vector2.Zero), "WalkLeft");
+            animator.CreateAnimation(new Animation(5, 1, 0, 107, 100, 6, Vector2.Zero), "AttackRight");
+            animator.CreateAnimation(new Animation(5, 400, 0, 107, 100, 6, Vector2.Zero), "AttackLeft");
+            animator.CreateAnimation(new Animation(2, 100, 0, 107, 100, 2, Vector2.Zero), "JumpRight");
+            animator.CreateAnimation(new Animation(3, 100, 2, 107, 100, 6, Vector2.Zero), "JumpAttackRight");
+            animator.CreateAnimation(new Animation(2, 500, 0, 107, 100, 2, Vector2.Zero), "JumpLeft");
+            animator.CreateAnimation(new Animation(3, 500, 2, 107, 100, 6, Vector2.Zero), "JumpAttackLeft");
+            animator.CreateAnimation(new Animation(4, 200, 0, 107, 100, 6, Vector2.Zero), "AttackTwoRight");
+            animator.CreateAnimation(new Animation(4, 600, 0, 107, 100, 6, Vector2.Zero), "AttackTwoLeft");
+            animator.CreateAnimation(new Animation(1, 620, 1, 107, 100, 1, Vector2.Zero), "CrouchLeft");
+            animator.CreateAnimation(new Animation(1, 800, 0, 107, 100, 1, Vector2.Zero), "CroucRight");
+            animator.CreateAnimation(new Animation(2, 0, 0, 107, 100, 2, Vector2.Zero), "IdleRight");
+            animator.CreateAnimation(new Animation(2, 400, 0, 107, 100, 2, Vector2.Zero), "IdleLeft");
+            animator.CreateAnimation(new Animation(2, 900, 3, 107, 150, 5, Vector2.Zero), "DieLeft");
+            animator.CreateAnimation(new Animation(2, 900, 0, 107, 100, 5, Vector2.Zero), "DieRight");
 
 
 
 
-           
+
             animator.PlayAnimation("IdleLeft");
 
 
