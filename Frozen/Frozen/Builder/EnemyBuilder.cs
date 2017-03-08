@@ -24,7 +24,7 @@ namespace Frozen
 
             gameObject.AddComponent(new Transform(gameObject, new Vector2(0, 0)));
             gameObject.AddComponent(new SpriteRenderer(gameObject, "SpritesheeptAlmostFinalenemy", 0));
-            gameObject.AddComponent(new Enemy(gameObject, 100f));
+            gameObject.AddComponent(new Enemy(gameObject, 100f, 100));
             gameObject.AddComponent(new Animator(gameObject));
         }
 
