@@ -50,7 +50,7 @@ namespace Frozen
             KeyboardState x = Keyboard.GetState();
             if (x.IsKeyDown(Keys.W) && !jumped)
             {
-                speed -= 20f;
+                speed -= 10f;
                 jumped = true;
             }
 
@@ -59,7 +59,7 @@ namespace Frozen
                 transform.Translate(new Vector2(0, speed));
                 speed += acc;
             }
-            if (transform.Position.Y > 200)
+            if (transform.Position.Y > 50)
             {
                 transform.Translate(new Vector2(0, -1));
                 jumped = false;
