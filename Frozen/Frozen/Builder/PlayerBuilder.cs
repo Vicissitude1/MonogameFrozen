@@ -22,6 +22,7 @@ namespace Frozen
             gameObject.AddComponent(new SpriteRenderer(gameObject, "spritesheetfinal", 1));
             gameObject.AddComponent(new Player(gameObject, 101f, 100));
             gameObject.AddComponent(new Animator(gameObject));
+            gameObject.AddComponent(new Collide(gameObject));
         }
         
         public GameObject GetResult()
