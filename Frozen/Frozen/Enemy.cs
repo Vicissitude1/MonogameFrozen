@@ -16,12 +16,17 @@ namespace Frozen
         private Animator animator;
         private float speed;
         private IStrategy strategy;
+        int health;
 
 
-        public Enemy(GameObject gameObject, float speed) : base(gameObject)
+        public Enemy(GameObject gameObject, float speed, int Health) : base(gameObject)
         {
             this.speed = speed;
             speed = 10;
+            this.health = Health;
+            health = 100;
+            
+
         }
 
 
@@ -48,9 +53,24 @@ namespace Frozen
         {
             //Husk at alt skal hentes gennem noget andet så for at få player position 
              Vector2 V = GameWorld.Instance.gos.Find(g => g.GetComponent("Player") != null).transform.Position - GameObject.transform.Position;
+
+            currentDirection = V.X > 0 ? DIRECTION.Right : DIRECTION.Left;
+            animator.PlayAnimation("Walk" + currentDirection);
+          
+            //mums = V som er lig med afstanden mellem spiller og fjende
+            if (V.Length() <= 7)
+            {
+                
+
+            // animator.PlayAnimation("Attack" + currentDirection || "AttackTwo" + currentDirection);
+
+
+            }
+            
+
             V.Normalize();
             GameObject.transform.Translate(V * speed * GameWorld.Instance.deltaTime);
-           // if()
+            
        
         }
 
