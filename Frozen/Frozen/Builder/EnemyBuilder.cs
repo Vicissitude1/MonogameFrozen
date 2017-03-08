@@ -22,7 +22,7 @@ namespace Frozen
 
             gameObject = new GameObject();
 
-            gameObject.AddComponent(new Transform(gameObject, new Vector2(0, 0)));
+            gameObject.AddComponent(new Transform(gameObject, new Vector2(500, 500)));
             gameObject.AddComponent(new SpriteRenderer(gameObject, "SlimeSheet.png", 0));
             gameObject.AddComponent(new Enemy(gameObject, 200f));
             gameObject.AddComponent(new Animator(gameObject));
