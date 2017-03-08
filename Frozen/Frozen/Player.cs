@@ -24,8 +24,8 @@ namespace Frozen
         public Player(GameObject go, float speed) :base(go)
         {
             this.Speed = speed;
-            canMove = true;
-            canJump = true;
+            canMove = false;
+            canJump = false;
         }
         
         //public void Execute(ref DIRECTION CurrendtDirecion)
@@ -67,12 +67,13 @@ namespace Frozen
                 }
                 else if (keyState.IsKeyDown(Keys.Q))
                 {
-                    strategy = new Attack(animator);
+                    strategy = new Attack2(animator);
                     canMove = false;
                 }
 
 
             }
+
             strategy.Execute(ref direction);
         }
 
@@ -94,10 +95,6 @@ namespace Frozen
             {
                 canMove = true;
             }
-            if (animationName.Contains("Jump"))
-            {
-                canMove = false;
-            }
         }
 
 
@@ -105,7 +102,7 @@ namespace Frozen
         public void LoadContent(ContentManager Content)
         {
             animator = (Animator)GameObject.GetComponent("Animator");
-            strategy = new Idle(animator);
+            strategy = new Jump(GameObject.transform, GameObject, animator);
             CreateAnimation();
         }
 

@@ -26,7 +26,6 @@ namespace Frozen
 
         public Jump(Transform transform, GameObject gameObject, Animator animator)
         {
-            this.pos = pos;
             jumped = false;
             acc = 0.5f;
             this.animator = animator;
@@ -46,25 +45,24 @@ namespace Frozen
 
         public void Execute(ref DIRECTION CurrentDirection)
         {
-            Vector2 translation = Vector2.Zero;
-
+            Vector2 translation = Vector2.Zero; //Fjernede keybord knap W YO
             
-            KeyboardState x = Keyboard.GetState();
-            if (x.IsKeyDown(Keys.W) && !jumped)
+            if (!jumped)
             {
-                speed -= 20f;
+                speed -= 10f;
                 jumped = true;
             }
 
             if (jumped)
             {
-                pos.Y += speed;
+                transform.Translate(new Vector2(0, speed));
                 speed += acc;
             }
-            if (pos.Y > 400)
+            if (transform.Position.Y > 100)
             {
-                pos.Y = 400f;
+                transform.Translate(new Vector2(0, -1));
                 jumped = false;
+                player.canMove = true;
             }
 
         
