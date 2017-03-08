@@ -20,7 +20,7 @@ namespace Frozen
 
             gameObject.AddComponent(new Transform(gameObject, new Vector2(50 , 300)));
             gameObject.AddComponent(new SpriteRenderer(gameObject, "spritesheetfinal", 1));
-            gameObject.AddComponent(new Player(gameObject, 200f));
+            gameObject.AddComponent(new Player(gameObject, 101f, 100));
             gameObject.AddComponent(new Animator(gameObject));
         }
         

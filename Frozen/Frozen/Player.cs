@@ -22,11 +22,13 @@ namespace Frozen
     
 
 
-        public Player(GameObject go, float speed) :base(go)
+        public Player(GameObject go, float speed, int health) :base(go)
         {
             this.Speed = speed;
             canMove = false;
             canJump = false;
+            this.health = health;
+            health = 100;
         }
         
         //public void Execute(ref DIRECTION CurrendtDirecion)
