@@ -27,9 +27,7 @@ namespace Frozen
 
         public void Execute(ref DIRECTION currentDirection)
         {
-            Vector2 V = GameWorld.Instance.gos.Find(g => g.GetComponent("Player") != null).transform.Position - GameObject.transform.Position;
-            V.Normalize();
-            GameObject.transform.Translate(V * speed * GameWorld.Instance.deltaTime);
+           
 
 
         }
@@ -48,6 +46,9 @@ namespace Frozen
 
         public void Update()
         {
+             Vector2 V = GameWorld.Instance.gos.Find(g => g.GetComponent("Player") != null).transform.Position - GameObject.transform.Position;
+            V.Normalize();
+            GameObject.transform.Translate(V * speed * GameWorld.Instance.deltaTime);
             //Husk at alt skal hentes gennem noget andet så for at få player position 
        
         }
@@ -72,7 +73,7 @@ namespace Frozen
 
 
 
-            animator.PlayAnimation("IdleRight");
+           
             animator.PlayAnimation("IdleLeft");
 
 
