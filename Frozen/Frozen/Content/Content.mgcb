@@ -103,3 +103,9 @@
 /processorParam:Quality=Best
 /build:Spin Kick-SoundBible.com-1263586030.mp3
 
+#begin baggrundstest.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:baggrundstest.mp3
+
