@@ -16,7 +16,7 @@ namespace Frozen
 
         public void BuildGameObject(Vector2 position)
         {
-            gameObject = new GameObject();
+            gameObject = new GameObject(new Vector2(0, 0));
 
             gameObject.AddComponent(new Transform(gameObject, new Vector2(50 , 300)));
             gameObject.AddComponent(new SpriteRenderer(gameObject, "spritesheetfinal", 1));

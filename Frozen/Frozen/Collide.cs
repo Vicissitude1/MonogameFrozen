@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
-    class Collide : Component, ILoadable
+    class Collide : Component, ILoadable, IDrawable
     {
         private SpriteRenderer spriteRenderer;
         private Texture2D texture2D;
@@ -26,8 +26,7 @@ namespace Frozen
             
             get
             {
-                GameWorld.Instance.GraphicsDevice.DrawPrimitives(PrimitiveType.TriangleStrip, 9, 2);
-                GameWorld.Instance.GraphicsDevice.Flush();
+               
                 return new Rectangle
                     (
                         (int)(GameObject.transform.Position.X + spriteRenderer.offset.X),
