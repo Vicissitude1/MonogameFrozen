@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Frozen
 {
@@ -19,7 +20,7 @@ namespace Frozen
         private IStrategy strategy;
         private DIRECTION direction;
         int health;
-    
+
 
 
         public Player(GameObject go, float speed, int health) :base(go)
@@ -29,6 +30,7 @@ namespace Frozen
             canJump = false;
             this.health = health;
             health = 100;
+            
         }
         
         //public void Execute(ref DIRECTION CurrendtDirecion)
@@ -67,11 +69,15 @@ namespace Frozen
                 {
                     strategy = new Attack(animator);
                     canMove = false;
+
+                    SFX.soundEffects[0].CreateInstance().Play();
+                    //SFX.Instance.soundEffects
                 }
                 else if (keyState.IsKeyDown(Keys.Q))
                 {
                     strategy = new Attack2(animator);
                     canMove = false;
+                    SFX.soundEffects[0].CreateInstance().Play();
                 }
 
 

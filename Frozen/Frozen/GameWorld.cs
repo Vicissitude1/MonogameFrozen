@@ -19,7 +19,7 @@ namespace Frozen
     {
 
 
-        private float layerDepth;
+        
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         public float deltaTime { get; private set; }
@@ -104,6 +104,8 @@ namespace Frozen
             background = Content.Load<Texture2D>("background");
             destRect = new Rectangle((int)(-GraphicsDevice.Viewport.Width * 0.5f), (int)(-GraphicsDevice.Viewport.Height * 0.5f), GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             sourceRectangle = new Rectangle(0, 0, 213, 120);
+
+            SFX.Instance.LoadContent(this.Content);
 
             this.song = Content.Load<Song>("baggrundstest");
             MediaPlayer.Play(song);
