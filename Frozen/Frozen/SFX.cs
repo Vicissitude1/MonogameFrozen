@@ -44,17 +44,17 @@ namespace Frozen
 
 
 
-            //soundEffects.Add(content.Load<SoundEffect>("sound1"));
-            //soundEffects.Add(content.Load<SoundEffect>("sound2"));
+            soundEffects.Add(content.Load<SoundEffect>("baggrundstest1"));
+            soundEffects.Add(content.Load<SoundEffect>("sound2"));
+          
 
+            // Fire and forget play
+            soundEffects[0].Play();
 
-            //Fire and forget play
-            //soundEffects[0].Play();
-
-            //Play that can be manipulated after the fact
-            //var instance = soundEffects[0].CreateInstance();
-            //instance.IsLooped = true;
-            //instance.Play();
+            // Play that can be manipulated after the fact
+            var instance = soundEffects[0].CreateInstance();
+            instance.IsLooped = true;
+            instance.Play();
         }
     
     }
