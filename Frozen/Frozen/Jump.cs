@@ -14,7 +14,6 @@ namespace Frozen
     {
         //Vector2 pos;
         //Texture2D sprite;
-        int health;
         bool jumped;
         float speed;
         float acc;

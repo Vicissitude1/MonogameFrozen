@@ -91,9 +91,21 @@
 /processorParam:Quality=Best
 /build:baggrundstest.mp3
 
-#begin baggrundstest1.mp3
+#begin PunchSound1.mp3
 /importer:Mp3Importer
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:baggrundstest1.mp3
+/build:PunchSound1.mp3
+
+#begin PunchSound2.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:PunchSound2.mp3
+
+#begin PunchSound3.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:PunchSound3.mp3
 
