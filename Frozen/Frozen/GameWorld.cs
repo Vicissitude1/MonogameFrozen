@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Media;
 
+
 namespace Frozen
 {
     /// <summary>
@@ -106,7 +107,7 @@ namespace Frozen
 
             this.song = Content.Load<Song>("baggrundstest");
             MediaPlayer.Play(song);
-            //  MediaPlayer.IsRepeating = true;
+            MediaPlayer.IsRepeating = true;
 
             MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
 
@@ -119,8 +120,7 @@ namespace Frozen
         }
 
 
-        void MediaPlayer_MediaStateChanged(object sender, System.
-                                           EventArgs e)
+        void MediaPlayer_MediaStateChanged(object sender, System.EventArgs e)
         {
             // 0.0f is silent, 1.0f is full volume
             MediaPlayer.Volume -= 0.1f;

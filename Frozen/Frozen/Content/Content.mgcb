@@ -85,27 +85,27 @@
 /processorParam:TextureFormat=Color
 /build:SpritesheeptAlmostFinalenemy.png
 
-#begin Kick-SoundBible.com-1331196005.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Kick-SoundBible.com-1331196005.mp3
-
-#begin Roundhouse Kick-SoundBible.com-1663225804.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Roundhouse Kick-SoundBible.com-1663225804.mp3
-
-#begin Spin Kick-SoundBible.com-1263586030.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Spin Kick-SoundBible.com-1263586030.mp3
-
 #begin baggrundstest.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:baggrundstest.mp3
+
+#begin sound1
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:sound1
+
+#begin sound2
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:sound2
+
+#begin sound3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:sound3
 
