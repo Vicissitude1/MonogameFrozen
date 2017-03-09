@@ -70,7 +70,7 @@ namespace Frozen
             gos.Add(director.Construct(new Vector2(0, 0)));
 
             director = new Director(new EnemyBuilder());
-            gos.Add(director.Construct(new Vector2(500, 500)));
+            gos.Add(director.Construct(new Vector2(500, 1000)));
 
             Camera.Instance.Zoom = 1.0f;
 

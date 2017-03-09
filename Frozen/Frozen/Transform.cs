@@ -16,7 +16,7 @@ namespace Frozen
 
         public Transform(GameObject gameObject, Vector2 position)
         {
-
+            this.Position = position;
         }
 
         public void Translate(Vector2 translation)
