@@ -44,7 +44,7 @@ namespace Frozen
             
 
 
-            soundEffects.Add(content.Load<SoundEffect>("sound1"));
+            soundEffects.Add(content.Load<SoundEffect>("baggrundstest1"));
             soundEffects.Add(content.Load<SoundEffect>("sound2"));
           
 

@@ -77,7 +77,7 @@ namespace Frozen
                 {
                     strategy = new Attack2(animator);
                     canMove = false;
-                    SFX.soundEffects[0].CreateInstance().Play();
+                    SFX.soundEffects[1].CreateInstance().Play();
                 }
 
 
