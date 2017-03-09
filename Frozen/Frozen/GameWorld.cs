@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Media;
 
 namespace Frozen
 {
@@ -27,7 +28,8 @@ namespace Frozen
         private Rectangle destRect;
         private Rectangle sourceRectangle;
         Floor floor;
-
+        public Song song;
+        
 
 
         int i = 0;
@@ -102,6 +104,12 @@ namespace Frozen
             destRect = new Rectangle((int)(-GraphicsDevice.Viewport.Width * 0.5f), (int)(-GraphicsDevice.Viewport.Height * 0.5f), GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             sourceRectangle = new Rectangle(0, 0, 213, 120);
 
+            this.song = Content.Load<Song>("baggrundstest");
+            MediaPlayer.Play(song);
+            //  MediaPlayer.IsRepeating = true;
+
+            MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
+
             foreach (GameObject go in gos)
             {
                 go.LoadContent(this.Content);
@@ -110,6 +118,14 @@ namespace Frozen
              // TODO: use this.Content to load your game content here
         }
 
+
+        void MediaPlayer_MediaStateChanged(object sender, System.
+                                           EventArgs e)
+        {
+            // 0.0f is silent, 1.0f is full volume
+            MediaPlayer.Volume -= 0.1f;
+            MediaPlayer.Play(song);
+        }
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// game-specific content.
