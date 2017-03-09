@@ -91,21 +91,21 @@
 /processorParam:Quality=Best
 /build:baggrundstest.mp3
 
-#begin Kick-Sound.mp3
+#begin PunchSound1.mp3
 /importer:Mp3Importer
-/processor:SongProcessor
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Kick-Sound.mp3
+/build:PunchSound1.mp3
 
-#begin Roundhouse Kick-Sound.mp3
+#begin PunchSound2.mp3
 /importer:Mp3Importer
-/processor:SongProcessor
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Roundhouse Kick-Sound.mp3
+/build:PunchSound2.mp3
 
-#begin Spin Kick-Sound.mp3
+#begin PunchSound3.mp3
 /importer:Mp3Importer
-/processor:SongProcessor
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Spin Kick-Sound.mp3
+/build:PunchSound3.mp3
 
