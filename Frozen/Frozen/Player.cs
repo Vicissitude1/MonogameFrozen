@@ -70,14 +70,14 @@ namespace Frozen
                     strategy = new Attack(animator);
                     canMove = false;
 
-                    SFX.soundEffects[0].CreateInstance().Play();
+                    //SFX.soundEffects[0].CreateInstance().Play();
                     //SFX.Instance.soundEffects
                 }
                 else if (keyState.IsKeyDown(Keys.Q))
                 {
                     strategy = new Attack2(animator);
                     canMove = false;
-                    SFX.soundEffects[1].CreateInstance().Play();
+                   // SFX.soundEffects[1].CreateInstance().Play();
                 }
 
 
@@ -90,10 +90,12 @@ namespace Frozen
         {
             if (animationName.Contains("Attack"))
             {
+                
                 canMove = true;
             }
             if (animationName.Contains("AttackTwo"))
             {
+               
                 canMove = true;
             }
             if (animationName.Contains("Idle"))

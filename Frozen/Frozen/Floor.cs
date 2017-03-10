@@ -13,9 +13,9 @@ namespace Frozen
 {
     class Floor : IDrawable
     {
-        Texture2D texture;
-        Vector2 position;
-        Rectangle rect;
+        public Texture2D texture;
+        public Vector2 position;
+        public Rectangle rect;
 
         public void Initialize(ContentManager Content)
         {
