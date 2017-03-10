@@ -30,15 +30,6 @@ namespace Frozen
         public Matrix transform; // Matrix Transform
         public Vector2 pos; // Camera Position
         protected float rotation; // Camera Rotation
-
-        private Camera()
-        {
-            zoom = 1.0f;
-            rotation = 0.0f;
-            pos = Vector2.Zero;
-
-        }
-        // Sets and gets zoom
         public float Zoom   
         {
             get { return zoom; }
@@ -52,17 +43,27 @@ namespace Frozen
             set { rotation = value; }
         }
 
-        public void Move(Vector2 amount)
+        private Camera()
         {
-            pos += amount;
+            zoom = 1.0f;
+            rotation = 0.0f;
+            pos = Vector2.Zero;
+
         }
-        // Get set position
         public Vector2 Pos
         {
             get { return pos; }
             set { pos = value; }
         }
 
+        // Sets and gets zoom
+        
+        public void Move(Vector2 amount)
+        {
+            pos += amount;
+        }
+        // Get set position
+   
         public Matrix get_transformation(GraphicsDevice graphicsDevice)
         {
             transform =       

@@ -16,9 +16,9 @@ namespace Frozen
         private Animator animator;
         private float speed;
         private IStrategy strategy;
-        int health;
-        bool canMove;
-        int i; 
+        private int health;
+        private bool canMove;
+        private int i; 
 
 
         public Enemy(GameObject gameObject, float speed, int Health) : base(gameObject)

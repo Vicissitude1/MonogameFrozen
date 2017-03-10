@@ -14,9 +14,9 @@ namespace Frozen
     {
         //Vector2 pos;
         //Texture2D sprite;
-        bool jumped;
-        float speed;
-        float acc;
+        public bool jumped;
+        public float speed;
+        public float acc;
         public Animator animator { get; set; }
         private GameObject gameObject;
         private Transform transform;
