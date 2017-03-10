@@ -14,7 +14,17 @@ namespace Frozen
     {
         private SpriteRenderer spriteRenderer;
         private Texture2D texture2D;
-         public Rectangle CollisionBox
+        public Vector2 position;
+        public Vector2 velocity;
+
+        
+
+        public Collide (GameObject gameObject) : base(gameObject)
+        {
+            this.GameObject = gameObject;
+        }
+
+        public Rectangle CollisionBox
         {
             
             get
@@ -30,14 +40,28 @@ namespace Frozen
             }
         }
 
-        public Collide (GameObject gameObject) : base(gameObject)
+        public Collide(Texture2D texture, Vector2 position)
         {
-            this.GameObject = gameObject;
+            this.position = position;
+            this.texture2D = texture;
         }
 
-       
+        public Collide(Texture2D texture, Vector2 position, Vector2 velocity)
+        {
+            this.texture2D = texture;
+            this.position = position;
+            this.velocity = velocity;
+        }
 
-         public void LoadContent(ContentManager content)
+        //protected override void LoadContant()
+        //{
+        //    spriteBatch = new SpriteBatch(GraphicsDevice);
+
+        //    Texture2D wallTexture = Content.Load<Texture2D>("FrostFloor1000x100");
+
+        //}
+
+        public void LoadContent(ContentManager content)
         {
             spriteRenderer = (SpriteRenderer)GameObject.GetComponent("SpriteRenderer");
             texture2D = content.Load<Texture2D>("CollisionTexture.png");
