@@ -39,9 +39,9 @@ namespace Frozen
        
         public void LoadContent(ContentManager content)
         {
-             
-        
-            
+
+
+
 
 
             soundEffects.Add(content.Load<SoundEffect>("PunchSound1"));

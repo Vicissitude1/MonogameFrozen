@@ -53,9 +53,25 @@ namespace Frozen
                 jumped = true;
             }
 
+            KeyboardState keyState = Keyboard.GetState();
+
+            if (keyState.IsKeyDown(Keys.A))
+            {
+                translation += new Vector2(-1, 0);
+                CurrentDirection = DIRECTION.Left;
+
+            }
+            if (keyState.IsKeyDown(Keys.D))
+            {
+                translation += new Vector2(1, 0);
+                CurrentDirection = DIRECTION.Right;
+
+            }
+
             if (jumped)
             {
-                transform.Translate(new Vector2(0, speed));
+                translation.Y = speed;
+                transform.Translate(translation);
                 speed += acc;
             }
             if (transform.Position.Y > 90)
