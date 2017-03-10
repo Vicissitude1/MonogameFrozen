@@ -28,7 +28,7 @@ namespace Frozen
         private Texture2D background;
         private Rectangle destRect;
         private Rectangle sourceRectangle;
-        Floor floor;
+        public Floor floor;
         public Song song;
         
 
@@ -105,7 +105,7 @@ namespace Frozen
             destRect = new Rectangle((int)(-GraphicsDevice.Viewport.Width * 0.5f), (int)(-GraphicsDevice.Viewport.Height * 0.5f), GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             sourceRectangle = new Rectangle(0, 0, 213, 120);
 
-            SFX.Instance.LoadContent(this.Content);
+            //SFX.Instance.LoadContent(this.Content);
 
             this.song = Content.Load<Song>("baggrundstest");
             MediaPlayer.Play(song);
@@ -122,7 +122,7 @@ namespace Frozen
         }
 
 
-        void MediaPlayer_MediaStateChanged(object sender, System.EventArgs e)
+        public void MediaPlayer_MediaStateChanged(object sender, System.EventArgs e)
         {
             // 0.0f is silent, 1.0f is full volume
             MediaPlayer.Volume -= 0.1f;

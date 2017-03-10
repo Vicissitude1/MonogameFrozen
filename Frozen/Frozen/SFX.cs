@@ -6,30 +6,30 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
 using System;
 
-namespace Frozen
-{
-    class SFX : ILoadable
-    {
-        private static SFX instance;
-        public static SFX Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new SFX();
-                }
-                return instance;
-            }
-        }
+//namespace Frozen
+//{
+//    class SFX : ILoadable
+//    {
+//        private static SFX instance;
+//        public static SFX Instance
+//        {
+//            get
+//            {
+//                if (instance == null)
+//                {
+//                    instance = new SFX();
+//                }
+//                return instance;
+//            }
+//        }
 
-        public static List<SoundEffect> soundEffects;
+//        public static List<SoundEffect> soundEffects;
 
-        private SFX()
-        {
+//        private SFX()
+//        {
 
-            soundEffects = new List<SoundEffect>();
-        }
+//            soundEffects = new List<SoundEffect>();
+//        }
 
        
         
@@ -37,26 +37,26 @@ namespace Frozen
 
        
        
-        public void LoadContent(ContentManager content)
-        {
+//        public void LoadContent(ContentManager content)
+//        {
 
 
 
 
 
-            soundEffects.Add(content.Load<SoundEffect>("PunchSound1"));
-            soundEffects.Add(content.Load<SoundEffect>("PunchSound2"));
+//            soundEffects.Add(content.Load<SoundEffect>("PunchSound1"));
+//            soundEffects.Add(content.Load<SoundEffect>("PunchSound2"));
           
 
-            // Fire and forget play
-            soundEffects[0].Play();
+//            // Fire and forget play
+//            soundEffects[0].Play();
 
-            // Play that can be manipulated after the fact
-            var instance = soundEffects[0].CreateInstance();
-            instance.IsLooped = true;
-            instance.Play();
-        }
+//            // Play that can be manipulated after the fact
+//            var instance = soundEffects[0].CreateInstance();
+//            instance.IsLooped = true;
+//            instance.Play();
+//        }
     
-    }
-}
+//    }
+//}
 

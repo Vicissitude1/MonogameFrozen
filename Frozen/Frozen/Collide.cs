@@ -14,14 +14,7 @@ namespace Frozen
     {
         private SpriteRenderer spriteRenderer;
         private Texture2D texture2D;
-        
-
-        public Collide (GameObject gameObject) : base(gameObject)
-        {
-            this.GameObject = gameObject;
-        }
-
-        public Rectangle CollisionBox
+         public Rectangle CollisionBox
         {
             
             get
@@ -36,6 +29,13 @@ namespace Frozen
                     );
             }
         }
+
+        public Collide (GameObject gameObject) : base(gameObject)
+        {
+            this.GameObject = gameObject;
+        }
+
+       
 
          public void LoadContent(ContentManager content)
         {

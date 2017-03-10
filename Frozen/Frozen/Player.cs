@@ -19,7 +19,7 @@ namespace Frozen
         public bool canJump;
         private IStrategy strategy;
         private DIRECTION direction;
-        int health;
+        public int health;
 
 
 
