@@ -10,13 +10,13 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Frozen
 {
-    abstract class Component
+          abstract class Component
     {
-        public GameObject GameObject { get; private set; }
+        public GameObject GameObject { get; set; }
 
-        public abstract Component(GameObject gameObject)
+        public Component(GameObject go)
         {
-            this.GameObject = gameObject;
+            this.GameObject = go;
         }
 
         public Component()
